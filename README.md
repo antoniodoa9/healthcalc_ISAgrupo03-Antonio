@@ -252,6 +252,19 @@ Para cada categoría, probamos valores que están justo en el límite para asegu
 
 </details>
 
+<details>
+<summary><b>Pruebas de la BMR (métrica Harris-Benedict)</b></summary>
+
+* **Cálculo correcto para hombres:** Se comprueba que, al introducir peso, altura y edad válidos para un hombre, el resultado coincida con la fórmula de Harris-Benedict.
+* **Cálculo correcto para mujeres:** Se comprueba que, al introducir peso, altura y edad válidos para una mujer, el resultado coincida con la fórmula de Harris-Benedict.
+* **Protección ante género inválido:** Se debe lanzar un error con géneros distintos a 'M' o 'W'.
+* **Protección ante datos imposibles:**
+    * Se debe rechazar edades negativas o superior al límite razonable (por ejemplo más de 120 años).
+    * Se debe rechazar pesos fuera de un rango razonable (menores a 1 kg o mayores a 700 kg).
+    * Se debe rechazar alturas fuera de un rango razonable (menores a 30 cm o mayores a 300 cm).
+
+</details>
+
 
 ## Instalación y ejecución
 
