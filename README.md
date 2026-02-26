@@ -269,6 +269,15 @@ Para cada categoría, probamos valores que están justo en el límite para asegu
 
 </details>
 
+<details>
+<summary><b>Pruebas de Cálculo del Peso Corporal Ideal (IBW) - Lorentz</b></summary>
+
+* **Cálculo correcto (Hombres):** Se comprueba que, al introducir una altura normal (ej. 170 cm o 180 cm), el resultado coincida con la fórmula de Lorentz para hombres.
+* **Cálculo correcto (Mujeres):** Se comprueba que, al introducir una altura normal (ej. 160 cm o 170 cm), el resultado coincida con la fórmula de Lorentz para mujeres.
+* **Protección ante género inválido:** El sistema debe rechazar cualquier carácter que no sea 'M' (Hombre) o 'W' (Mujer), lanzando una excepción.
+* **Protección ante datos imposibles:** El sistema debe rechazar alturas menores a 30 cm o mayores a 300 cm (límites biológicos), al igual que valores negativos o cero, lanzando una excepción.
+
+</details>
 
 ## Instalación y ejecución
 
