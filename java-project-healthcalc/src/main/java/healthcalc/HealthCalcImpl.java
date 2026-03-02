@@ -79,4 +79,28 @@ public class HealthCalcImpl implements HealthCalc {
         }
         return bmr;
     }
+
+    @Override
+    public double idealBodyWeight(double height, char gender) throws InvalidHealthDataException {
+        if (gender != 'M' && gender != 'W') {
+            throw new InvalidHealthDataException("Gender must be 'M' or 'W'.");
+        }
+        
+        if (height <= 0) {
+            throw new InvalidHealthDataException("Height must be positive.");
+        }
+        if (height < 30 || height > 300) {
+            throw new InvalidHealthDataException("Height must be within a possible biological range, this is, between 30 and 300 cm.");
+        }
+
+        double ibw = 0.0;
+        if (gender == 'M') {
+            ibw = (height - 100) - ((height - 150) / 4.0);
+        } else { 
+            // If the program gets here, it's necessarily 'W' due to the initial exception check.
+            ibw = (height - 100) - ((height - 150) / 2.0);
+        }
+        
+        return ibw;
+    }
 }

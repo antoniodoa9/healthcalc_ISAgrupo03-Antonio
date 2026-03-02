@@ -45,4 +45,14 @@ public interface HealthCalc {
 	 * @throws Exception
 	 */
 	public double harrisBenedict(double weight, double height, char gender, int age) throws InvalidHealthDataException;
+
+	/**
+	 * Calculate the Ideal Body Weight (IBW) of a person with the Lorentz formula.
+	 *
+	 * @param height 	Height of the person (cm).
+	 * @param gender	Gender of the person ('M' for male, 'W' for woman).
+	 * @return	  		The IBW of the person (kg).
+	 * @throws InvalidHealthDataException
+	 */
+	public double idealBodyWeight(double height, char gender) throws InvalidHealthDataException;
 }
