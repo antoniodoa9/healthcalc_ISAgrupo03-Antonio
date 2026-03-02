@@ -19,9 +19,9 @@ import healthcalc.exceptions.InvalidHealthDataException;
  * 
  * Use the AAA pattern (Arrange, Act, Assert) for the tests.
  * 
- * @author ISA
+ * @author palomamtnz13 (ISAgrupo03)
  */
-@DisplayName("Tests para la calculadora de salud.")
+@DisplayName("Tests para la métrica BMI y su clasificación.")
 public class BMITest {
 
 	private HealthCalc healthCalc;
@@ -109,45 +109,19 @@ public class BMITest {
     @DisplayName("Clasificación básica a partir del BMI")
     class BMIClassificationTests {
 
-        @ParameterizedTest(name = "BMI {0} debe ser clasificado como Underweight")
-        @ValueSource(doubles = {10.0, 18.4, 18.49})
-        @DisplayName("Validación de categoría Underweight (Peso bajo)")
-        void testBmiUnderweight(double bmi) throws InvalidHealthDataException {
-            String expected = "Underweight";
-            
-            String result = healthCalc.bmiClassification(bmi);
-
-            assertEquals(expected, result);
-        }
-
-        @ParameterizedTest(name = "BMI {0} debe ser clasificado como Normal weight")
-        @ValueSource(doubles = {18.5, 22.0, 24.9, 24.99})
-        @DisplayName("Validación de categoría Normal weight (Peso saludable)")
-        void testBmiNormalWeight(double bmi) throws InvalidHealthDataException {
-            String expected = "Normal weight";
-
-            String result = healthCalc.bmiClassification(bmi);
-
-            assertEquals(expected, result);
-        }
-
-        @ParameterizedTest(name = "BMI {0} debe ser clasificado como Overweight")
-        @ValueSource(doubles = {25.0, 27.5, 29.9, 29.99})
-        @DisplayName("Validación de categoría Overweight (Sobrepeso)")
-        void testBmiOverweight(double bmi) throws InvalidHealthDataException {
-            String expected = "Overweight";
-
-            String result = healthCalc.bmiClassification(bmi);
-
-            assertEquals(expected, result);
-        }
-
-        @ParameterizedTest(name = "BMI {0} debe ser clasificado como Obesity")
-        @ValueSource(doubles = {30.0, 35.0, 50.0})
-        @DisplayName("Validación de categoría Obesity (Obesidad)")
-        void testBmiObesity(double bmi) throws InvalidHealthDataException {
-            String expected = "Obesity";
-
+        @ParameterizedTest(name = "BMI {0} debe ser clasificado como {1}")
+        @CsvSource({
+            "15.0, Severe Thinness",
+            "16.5, Moderate Thinness",
+            "18.0, Mild Thinness",
+            "22.0, Normal",
+            "27.0, Overweight",
+            "32.0, Obese Class I",
+            "37.0, Obese Class II",
+            "45.0, Obese Class III"
+        })
+        @DisplayName("Clasificación de las 8 categorías de BMI")
+        void testBmiClassificationCompleta(double bmi, String expected) throws InvalidHealthDataException {
             String result = healthCalc.bmiClassification(bmi);
 
             assertEquals(expected, result);
@@ -167,43 +141,6 @@ public class BMITest {
             assertThrows(InvalidHealthDataException.class, () -> healthCalc.bmiClassification(bmi));
         }
 
-        /* Test adicionales para mostrar que se pueden definir de otra forma. */
-
-        @Test
-        @DisplayName("Clasificación correcta para sobrepeso (Overweight)")
-        void testBmiOverweight() throws InvalidHealthDataException {
-            double bmiLimiteInferior = 25.0;
-            double bmiMedio = 27.5;
-            double bmiLimiteSuperior = 29.99;
-
-            String resultInferior = healthCalc.bmiClassification(bmiLimiteInferior);
-            String resultMedio = healthCalc.bmiClassification(bmiMedio);
-            String resultSuperior = healthCalc.bmiClassification(bmiLimiteSuperior);
-
-            assertAll(
-                () -> assertEquals("Overweight", resultInferior),
-                () -> assertEquals("Overweight", resultMedio),
-                () -> assertEquals("Overweight", resultSuperior)
-            );
-        }
-
-        @ParameterizedTest(name = "BMI {0} debe ser clasificado como {1}")
-        @CsvSource({
-            "10.0, Underweight",
-            "18.4, Underweight",
-            "18.5, Normal weight",
-            "24.9, Normal weight",
-            "25.0, Overweight",
-            "29.9, Overweight",
-            "30.0, Obesity",
-            "45.0, Obesity"
-        })
-        @DisplayName("Clasificación de BMI en los límites exactos de cada categoría")
-        void testBmiClassificationLimites(double bmi, String expectedCategory) throws InvalidHealthDataException {
-            String result = healthCalc.bmiClassification(bmi);
-
-            assertEquals(expectedCategory, result);
-        }
     }
 
 }
