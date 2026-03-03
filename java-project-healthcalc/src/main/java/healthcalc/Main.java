@@ -12,7 +12,7 @@ public class Main {
             char genero = 'M'; // hombre
             int age = 30; // años
 
-            System.out.println("Datos: Peso=" + weight +"kg, Altura=" + height + "cm, Género=" + genero + ", Edad=" + age + " años");
+            System.out.println("Datos: Peso=" + weight +"kg, Altura=" + height + "m, Género=" + genero + ", Edad=" + age + " años");
 
             // BMI (Cálculo numérico)
             double bmiValue = healthCalc.bmi(weight, height);
