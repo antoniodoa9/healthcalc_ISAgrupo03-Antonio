@@ -7,28 +7,28 @@ public class Main {
         HealthCalc healthCalc = new HealthCalcImpl();
         
         try {
-            double weight = 75; // kg
+            double weight = 75.0; // kg
             double height = 1.75; // m
-            char genero = 'M'; // hombre
-            int age = 30; // años
+            char gender = 'M'; // male
+            int age = 30; // years
 
-            System.out.println("Datos: Peso=" + weight +"kg, Altura=" + height + "m, Género=" + genero + ", Edad=" + age + " años");
+            System.out.println("Data: Weight=" + weight +"kg, Height=" + height + "m, Gender=" + gender + ", Age=" + age + " years");
 
-            // BMI (Cálculo numérico)
+            // BMI 
             double bmiValue = healthCalc.bmi(weight, height);
             System.out.println("BMI: " + String.format("%.2f", bmiValue));
 
-            // Clasificación del BMI
+            // BMI classification
             String bmiClass = healthCalc.bmiClassification(bmiValue);
-            System.out.println("Clasificación del BMI: " + bmiClass);
+            System.out.println("BMI classification: " + bmiClass);
 
-            // IBW (peso Ideal)
-            double ibw = healthCalc.idealBodyWeight(height*100, genero); //paso los m a cm
-            System.out.println("Peso Ideal (IBW): " + String.format("%.2f", ibw) + " kg");
+            // IBW (ideal body weigth)
+            double ibw = healthCalc.idealBodyWeight(height*100, gender); // m to cm
+            System.out.println("Ideal body weight (IBW): " + String.format("%.2f", ibw) + " kg");
 
-            // Harris-Benedict (TMB)
-            double tmb = healthCalc.harrisBenedict(weight, height*100, genero, age); // paso los m a cm
-            System.out.println("Tasa Metabólica Basal (Harris-Benedict): " + String.format("%.2f", tmb) + " kcal/día");
+            // Harris-Benedict (BMR)
+            double tmb = healthCalc.harrisBenedict(weight, height*100, gender, age); // m to cm
+            System.out.println("Basal metabolic rate (Harris-Benedict): " + String.format("%.2f", tmb) + " kcal/day");
 
         } catch (InvalidHealthDataException e) {
             System.err.println("Error: " + e.getMessage());
