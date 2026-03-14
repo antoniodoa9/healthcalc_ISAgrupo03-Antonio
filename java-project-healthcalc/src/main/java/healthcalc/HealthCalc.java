@@ -33,4 +33,26 @@ public interface HealthCalc {
 	 * @throws Exception
 	 */
 	public double bmi(double weight, double height) throws InvalidHealthDataException;
+
+	/**
+	 * Calculate the BMR of a person with the Harris-Benedict formula:
+	 *
+	 * @param weight	Weight of the person (kg).
+	 * @param height 	Height of the person (cm).
+	 * @param gender	Gender of the person ('M' for male, 'W' for woman).
+	 * @param age		Age of the person (years).
+	 * @return	  		The BMR of the person (kcal/day).
+	 * @throws Exception
+	 */
+	public double harrisBenedict(double weight, double height, char gender, int age) throws InvalidHealthDataException;
+
+	/**
+	 * Calculate the Ideal Body Weight (IBW) of a person with the Lorentz formula.
+	 *
+	 * @param height 	Height of the person (cm).
+	 * @param gender	Gender of the person ('M' for male, 'W' for woman).
+	 * @return	  		The IBW of the person (kg).
+	 * @throws InvalidHealthDataException
+	 */
+	public double idealBodyWeight(double height, char gender) throws InvalidHealthDataException;
 }
