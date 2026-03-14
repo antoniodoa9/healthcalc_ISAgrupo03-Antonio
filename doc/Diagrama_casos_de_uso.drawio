@@ -1,0 +1,262 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36" version="29.6.1">
+  <diagram name="Página-1" id="8xSR4EZxFvKFeIGQy4UV">
+    <mxGraphModel dx="1603" dy="4318" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-1" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;strokeWidth=1;fontSize=12;fontStyle=0;gradientColor=none;gradientDirection=south;fillColor=light-dark(#000000,#000000);fillStyle=auto;perimeterSpacing=10;" value="Profesional de la salud" vertex="1">
+          <mxGeometry height="60" width="30" x="50" y="-1859" as="geometry" />
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;labelPosition=right;verticalLabelPosition=top;align=left;verticalAlign=bottom;fontFamily=Verdana;fillColor=light-dark(default, #c62424);labelBackgroundColor=default;fontSize=12;" value="&lt;h4&gt;&lt;br&gt;&lt;/h4&gt;" vertex="1">
+          <mxGeometry height="1160" width="543" x="267" y="-2329" as="geometry" />
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-12" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontFamily=Verdana;autosizeText=0;fontSize=12;fontStyle=1" value="Calculadora de salud (HealthCalc)" vertex="1">
+          <mxGeometry height="30" width="320" x="390" y="-2329" as="geometry" />
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-13" parent="1" style="ellipse;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#1ba1e2;strokeColor=#006EAF;fontColor=#ffffff;fontSize=12;" value="Calcular IMC (índice de masa corporal) o BMI en inglés" vertex="1">
+          <mxGeometry height="80" width="140" x="290" y="-2269" as="geometry" />
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-14" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;fontSize=12;perimeterSpacing=5;" value="Calcular PCI (peso corporal ideal) o IBW en inglés" vertex="1">
+          <mxGeometry height="70" width="140" x="290" y="-2169" as="geometry" />
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-16" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#a0522d;strokeColor=#6D1F00;fontColor=#ffffff;fontSize=12;" value="Calcular ASC (área de superficie corporal)" vertex="1">
+          <mxGeometry height="70" width="140" x="290" y="-2079" as="geometry" />
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-17" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#a0522d;fontColor=#ffffff;strokeColor=#6D1F00;fontSize=12;" value="Calcular PA (perímetro abdominal)" vertex="1">
+          <mxGeometry height="70" width="140" x="290" y="-1989" as="geometry" />
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-18" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#a0522d;fontColor=#ffffff;strokeColor=#6D1F00;fontSize=12;" value="Calcular ICC (índice de cintura-cadera)" vertex="1">
+          <mxGeometry height="70" width="140" x="290" y="-1899" as="geometry" />
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-19" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;fontSize=12;" value="Calcular TMB (tasa metabólica basal) o BMR en inglés" vertex="1">
+          <mxGeometry height="70" width="140" x="290" y="-1809" as="geometry" />
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-20" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#a0522d;fontColor=#ffffff;strokeColor=#6D1F00;fontSize=12;" value="Calcular GEDT (gasto energético diario total)" vertex="1">
+          <mxGeometry height="70" width="140" x="290" y="-1689" as="geometry" />
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-22" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#a0522d;fontColor=#ffffff;strokeColor=#6D1F00;perimeterSpacing=0;fontSize=12;" value="Calcular VAI (índice de aposidad visceral)" vertex="1">
+          <mxGeometry height="70" width="140" x="290" y="-1614" as="geometry" />
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-23" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#a0522d;fontColor=#ffffff;strokeColor=#6D1F00;fontSize=12;" value="Calcular eGFR (tasa de filtración glomerular estimada)" vertex="1">
+          <mxGeometry height="70" width="140" x="290" y="-1439" as="geometry" />
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-24" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#a0522d;fontColor=#ffffff;strokeColor=#6D1F00;fontSize=12;" value="Puntuar escala NEWS2 (national early warning score 2)" vertex="1">
+          <mxGeometry height="70" width="140" x="290" y="-1349" as="geometry" />
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-25" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;fontSize=12;" value="Puntuar escala de Braden (riesgo de úlceras)" vertex="1">
+          <mxGeometry height="70" width="140" x="290" y="-1269" as="geometry" />
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-26" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#a0522d;fontColor=#ffffff;strokeColor=#6D1F00;fontSize=12;" value="Calcular PAM (presión arterial media)" vertex="1">
+          <mxGeometry height="70" width="140" x="290" y="-1529" as="geometry" />
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-41" edge="1" parent="1" source="IzeVAZ_jcJjoRmiLuWCT-1" style="endArrow=none;startArrow=none;endFill=0;startFill=0;endSize=8;html=1;verticalAlign=bottom;labelBackgroundColor=none;strokeWidth=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;" target="IzeVAZ_jcJjoRmiLuWCT-13" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="70" y="-1969" as="sourcePoint" />
+            <mxPoint x="230" y="-1969" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-42" edge="1" parent="1" source="IzeVAZ_jcJjoRmiLuWCT-1" style="endArrow=none;startArrow=none;endFill=0;startFill=0;endSize=8;html=1;verticalAlign=bottom;labelBackgroundColor=none;strokeWidth=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;" target="IzeVAZ_jcJjoRmiLuWCT-14" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="160" y="-1839" as="sourcePoint" />
+            <mxPoint x="320" y="-1839" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-43" edge="1" parent="1" source="IzeVAZ_jcJjoRmiLuWCT-1" style="endArrow=none;startArrow=none;endFill=0;startFill=0;endSize=8;html=1;verticalAlign=bottom;labelBackgroundColor=none;strokeWidth=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;" target="IzeVAZ_jcJjoRmiLuWCT-16" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="140" y="-1849" as="sourcePoint" />
+            <mxPoint x="300" y="-1849" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-44" edge="1" parent="1" source="IzeVAZ_jcJjoRmiLuWCT-1" style="endArrow=none;startArrow=none;endFill=0;startFill=0;endSize=8;html=1;verticalAlign=bottom;labelBackgroundColor=none;strokeWidth=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;" target="IzeVAZ_jcJjoRmiLuWCT-17" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="150" y="-1829" as="sourcePoint" />
+            <mxPoint x="310" y="-1829" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-45" edge="1" parent="1" source="IzeVAZ_jcJjoRmiLuWCT-1" style="endArrow=none;startArrow=none;endFill=0;startFill=0;endSize=8;html=1;verticalAlign=bottom;labelBackgroundColor=none;strokeWidth=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;" target="IzeVAZ_jcJjoRmiLuWCT-18" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="130" y="-1829" as="sourcePoint" />
+            <mxPoint x="290" y="-1829" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-46" edge="1" parent="1" source="IzeVAZ_jcJjoRmiLuWCT-1" style="endArrow=none;startArrow=none;endFill=0;startFill=0;endSize=8;html=1;verticalAlign=bottom;labelBackgroundColor=none;strokeWidth=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;" target="IzeVAZ_jcJjoRmiLuWCT-19" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="130" y="-1809" as="sourcePoint" />
+            <mxPoint x="290" y="-1809" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-47" edge="1" parent="1" source="IzeVAZ_jcJjoRmiLuWCT-1" style="endArrow=none;startArrow=none;endFill=0;startFill=0;endSize=8;html=1;verticalAlign=bottom;labelBackgroundColor=none;strokeWidth=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;" target="IzeVAZ_jcJjoRmiLuWCT-20" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="80" y="-1719" as="sourcePoint" />
+            <mxPoint x="240" y="-1719" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-48" edge="1" parent="1" source="IzeVAZ_jcJjoRmiLuWCT-1" style="endArrow=none;startArrow=none;endFill=0;startFill=0;endSize=8;html=1;verticalAlign=bottom;labelBackgroundColor=none;strokeWidth=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;" target="IzeVAZ_jcJjoRmiLuWCT-26" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="80" y="-1699" as="sourcePoint" />
+            <mxPoint x="240" y="-1699" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-49" edge="1" parent="1" source="IzeVAZ_jcJjoRmiLuWCT-1" style="endArrow=none;startArrow=none;endFill=0;startFill=0;endSize=8;html=1;verticalAlign=bottom;labelBackgroundColor=none;strokeWidth=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;" target="IzeVAZ_jcJjoRmiLuWCT-22" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="60" y="-1629" as="sourcePoint" />
+            <mxPoint x="220" y="-1629" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-50" edge="1" parent="1" source="IzeVAZ_jcJjoRmiLuWCT-1" style="endArrow=none;startArrow=none;endFill=0;startFill=0;endSize=8;html=1;verticalAlign=bottom;labelBackgroundColor=none;strokeWidth=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;" target="IzeVAZ_jcJjoRmiLuWCT-23" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="100" y="-1829" as="sourcePoint" />
+            <mxPoint x="180" y="-1529" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-51" edge="1" parent="1" source="IzeVAZ_jcJjoRmiLuWCT-1" style="endArrow=none;startArrow=none;endFill=0;startFill=0;endSize=8;html=1;verticalAlign=bottom;labelBackgroundColor=none;strokeWidth=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;" target="IzeVAZ_jcJjoRmiLuWCT-24" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="20" y="-1719" as="sourcePoint" />
+            <mxPoint x="180" y="-1719" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-52" edge="1" parent="1" source="IzeVAZ_jcJjoRmiLuWCT-1" style="endArrow=none;startArrow=none;endFill=0;startFill=0;endSize=8;html=1;verticalAlign=bottom;labelBackgroundColor=none;strokeWidth=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;targetPerimeterSpacing=0;fontSize=12;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" target="IzeVAZ_jcJjoRmiLuWCT-25" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="95" y="-1829" as="sourcePoint" />
+            <mxPoint x="250" y="-1739" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-53" edge="1" parent="1" source="IzeVAZ_jcJjoRmiLuWCT-20" style="html=1;verticalAlign=top;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;rounded=0;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;align=center;strokeWidth=2;fontSize=12;labelPosition=center;verticalLabelPosition=bottom;" target="IzeVAZ_jcJjoRmiLuWCT-19" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;lt;&amp;lt;include&amp;gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points" />
+            <mxPoint x="450" y="-1889" as="sourcePoint" />
+            <mxPoint x="610" y="-1889" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-54" edge="1" parent="1" source="IzeVAZ_jcJjoRmiLuWCT-22" style="html=1;verticalAlign=middle;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;align=center;fontSize=12;strokeWidth=2;labelPosition=center;verticalLabelPosition=middle;" target="IzeVAZ_jcJjoRmiLuWCT-13" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;">
+          <mxGeometry relative="1" width="160" x="-0.0012" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="550" y="-1589" />
+            </Array>
+            <mxPoint x="440" y="-1569" as="sourcePoint" />
+            <mxPoint x="600" y="-1569" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-55" edge="1" parent="1" source="IzeVAZ_jcJjoRmiLuWCT-56" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;strokeWidth=2;fontSize=12;" target="IzeVAZ_jcJjoRmiLuWCT-13" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="490" y="-2169" as="sourcePoint" />
+            <mxPoint x="650" y="-2169" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-56" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;fontSize=12;" value="Clasificar IMC en categorías" vertex="1">
+          <mxGeometry height="70" width="140" x="635" y="-2299" as="geometry" />
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-57" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#a0522d;fontColor=#ffffff;strokeColor=#6D1F00;fontSize=12;" value="Clasificar cuerpo en tipos de morfología&amp;nbsp;" vertex="1">
+          <mxGeometry height="70" width="140" x="660" y="-1959" as="geometry" />
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-58" edge="1" parent="1" source="IzeVAZ_jcJjoRmiLuWCT-57" style="html=1;verticalAlign=middle;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;strokeWidth=2;labelPosition=center;verticalLabelPosition=middle;align=center;fontSize=12;" target="IzeVAZ_jcJjoRmiLuWCT-18" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="580" y="-1919" as="sourcePoint" />
+            <mxPoint x="740" y="-1919" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-59" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#a0522d;fontColor=#ffffff;strokeColor=#6D1F00;" value="Calcular TMB con ecuación de Mifflin-St Jeor" vertex="1">
+          <mxGeometry height="60" width="110" x="587" y="-1849" as="geometry" />
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-60" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" value="Calcular TMB con ecuación de Harris-Benedict" vertex="1">
+          <mxGeometry height="50" width="120" x="580" y="-1784" as="geometry" />
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-61" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#a0522d;fontColor=#ffffff;strokeColor=#6D1F00;" value="Calcular TMB con ecuación de Katch-McArdle" vertex="1">
+          <mxGeometry height="50" width="120" x="582" y="-1729" as="geometry" />
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-62" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#a0522d;fontColor=#ffffff;strokeColor=#6D1F00;" value="Calcular TMB con ecuación de la OMS" vertex="1">
+          <mxGeometry height="60" width="110" x="585" y="-1674" as="geometry" />
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-63" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#a0522d;fontColor=#ffffff;strokeColor=#6D1F00;" value="Calcular PCI con fórmula de Devine" vertex="1">
+          <mxGeometry height="55" width="90" x="540" y="-2209" as="geometry" />
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-64" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#a0522d;fontColor=#ffffff;strokeColor=#6D1F00;" value="Calcular PCI con fórmula de Robinson" vertex="1">
+          <mxGeometry height="50" width="90" x="540" y="-2149" as="geometry" />
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-65" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#a0522d;fontColor=#ffffff;strokeColor=#6D1F00;" value="Calcular PCI con fórmula de Hamwi" vertex="1">
+          <mxGeometry height="50" width="90" x="540" y="-2089" as="geometry" />
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-66" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" value="Calcular PCI con fórmula de Lorentz" vertex="1">
+          <mxGeometry height="60" width="100" x="535" y="-2029" as="geometry" />
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-67" edge="1" parent="1" source="IzeVAZ_jcJjoRmiLuWCT-63" style="edgeStyle=none;html=1;endSize=12;endArrow=block;endFill=0;rounded=0;entryX=1;entryY=0;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" target="IzeVAZ_jcJjoRmiLuWCT-14" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="500" y="-2159" as="sourcePoint" />
+            <mxPoint x="660" y="-2159" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-68" edge="1" parent="1" source="IzeVAZ_jcJjoRmiLuWCT-64" style="edgeStyle=none;html=1;endSize=12;endArrow=block;endFill=0;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="IzeVAZ_jcJjoRmiLuWCT-14" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="460" y="-2099" as="sourcePoint" />
+            <mxPoint x="620" y="-2099" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-69" edge="1" parent="1" source="IzeVAZ_jcJjoRmiLuWCT-65" style="edgeStyle=none;html=1;endSize=12;endArrow=block;endFill=0;rounded=0;entryX=1;entryY=1;entryDx=0;entryDy=0;exitX=0;exitY=0;exitDx=0;exitDy=0;" target="IzeVAZ_jcJjoRmiLuWCT-14" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="380" y="-2064" as="sourcePoint" />
+            <mxPoint x="380" y="-2064" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-70" edge="1" parent="1" source="IzeVAZ_jcJjoRmiLuWCT-66" style="edgeStyle=none;html=1;endSize=12;endArrow=block;endFill=0;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0;exitY=0;exitDx=0;exitDy=0;" target="IzeVAZ_jcJjoRmiLuWCT-14" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="480" y="-2019" as="sourcePoint" />
+            <mxPoint x="640" y="-2019" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-71" edge="1" parent="1" source="IzeVAZ_jcJjoRmiLuWCT-59" style="edgeStyle=none;html=1;endSize=12;endArrow=block;endFill=0;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" target="IzeVAZ_jcJjoRmiLuWCT-19" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="710" y="-1819" as="sourcePoint" />
+            <mxPoint x="870" y="-1819" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-72" edge="1" parent="1" source="IzeVAZ_jcJjoRmiLuWCT-60" style="edgeStyle=none;html=1;endSize=12;endArrow=block;endFill=0;rounded=0;entryX=1;entryY=0;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" target="IzeVAZ_jcJjoRmiLuWCT-19" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="780" y="-1839" as="sourcePoint" />
+            <mxPoint x="940" y="-1839" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-73" edge="1" parent="1" source="IzeVAZ_jcJjoRmiLuWCT-61" style="edgeStyle=none;html=1;endSize=12;endArrow=block;endFill=0;rounded=0;entryX=1;entryY=1;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" target="IzeVAZ_jcJjoRmiLuWCT-19" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="730" y="-1709" as="sourcePoint" />
+            <mxPoint x="890" y="-1709" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-74" edge="1" parent="1" source="IzeVAZ_jcJjoRmiLuWCT-62" style="edgeStyle=none;html=1;endSize=12;endArrow=block;endFill=0;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" target="IzeVAZ_jcJjoRmiLuWCT-19" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="760" y="-1679" as="sourcePoint" />
+            <mxPoint x="920" y="-1679" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-77" parent="1" style="shape=table;startSize=30;container=1;collapsible=0;childLayout=tableLayout;fontSize=16;align=left;verticalAlign=top;fontStyle=1;spacingLeft=6;spacing=0;resizable=0;fillColor=default;" value="Leyenda" vertex="1">
+          <mxGeometry height="150" width="240" y="-1319" as="geometry" />
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-80" parent="IzeVAZ_jcJjoRmiLuWCT-77" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" value="" vertex="1">
+          <mxGeometry height="40" width="240" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-81" parent="IzeVAZ_jcJjoRmiLuWCT-80" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=#006EAF;overflow=hidden;fillColor=#1ba1e2;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=12;align=left;fontColor=#ffffff;spacingLeft=10;spacingRight=4;" value="Métricas implementadas en la P1&amp;nbsp;" vertex="1">
+          <mxGeometry height="40" width="240" as="geometry">
+            <mxRectangle height="40" width="240" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-82" parent="IzeVAZ_jcJjoRmiLuWCT-77" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" value="" vertex="1">
+          <mxGeometry height="40" width="240" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-83" parent="IzeVAZ_jcJjoRmiLuWCT-82" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=#6D1F00;overflow=hidden;fillColor=#a0522d;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=12;align=left;fontColor=#ffffff;spacingLeft=10;spacingRight=4;" value="Métricas no implementadas en la P1" vertex="1">
+          <mxGeometry height="40" width="240" as="geometry">
+            <mxRectangle height="40" width="240" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-84" parent="IzeVAZ_jcJjoRmiLuWCT-77" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" value="" vertex="1">
+          <mxGeometry height="40" width="240" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="IzeVAZ_jcJjoRmiLuWCT-85" parent="IzeVAZ_jcJjoRmiLuWCT-84" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=#005700;overflow=hidden;fillColor=#008a00;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=12;align=left;fontColor=#ffffff;spacingLeft=10;spacingRight=4;" value="Nuevo caso de uso" vertex="1">
+          <mxGeometry height="40" width="240" as="geometry">
+            <mxRectangle height="40" width="240" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
