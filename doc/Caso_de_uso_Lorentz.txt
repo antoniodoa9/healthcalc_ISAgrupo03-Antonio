@@ -12,6 +12,7 @@ Stakeholders e intereses:
 Precondiciones:
 - El sistema está encendido.
 - El sistema funciona correctamente, es decir, está operativo.
+- El profesional de la salud ha iniciado sesión.
 - El sistema se encuentra a la espera de peticiones.
 
 Garantías de éxito:
@@ -40,4 +41,4 @@ Escenario principal de éxito:
 Extensiones:
 4a. El género introducido es inválido, es decir, es distinto a 'M' o 'W': el sistema interrumpe el proceso y muestra un mensaje de error para después volver al paso 2.
 7a. El profesional de la salud introduce caracteres que no son numéricos o deja el campo vacío: el sistema detecta que el formato no es válido y muestra el mensaje de error correspondiente para después volver a solicitar el parámetro volviendo al paso 6.
-9a. La altura introducida está fuera de los límites razonables: el sistema rechaza el valor que está fuera de los límites razonables y muestra el mensaje de error correspondiente para después volver al paso 6.
+8a. La altura introducida está fuera de los límites razonables: el sistema rechaza el valor que está fuera de los límites razonables y muestra el mensaje de error correspondiente para después volver al paso 6.
