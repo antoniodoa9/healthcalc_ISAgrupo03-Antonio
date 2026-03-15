@@ -1,0 +1,44 @@
+ID: CU_IBW_LORENTZ
+Nombre del caso de uso: Calcular PCI con fórmula de Lorentz
+Descripción: El profesional de la salud desea calcular el PCI (Peso Corporal Ideal o IBW) de un paciente usando la ecuación de Lorentz. El sistema debe realizar este cálculo a partir del género y la altura del paciente, verificando que los datos introducidos sean válidos y razonables. Finalmente, el sistema debe mostrar por pantalla el PCI calculado.
+Actor principal: Profesional de la salud
+Ámbito: Calculadora de salud (HealthCalc)
+Nivel: Objetivo de usuario
+
+Stakeholders e intereses:
+- Profesional de la salud: desea obtener un cálculo rápido, preciso y sin errores matemáticos para evaluar el estado físico del paciente y establecer objetivos de peso.
+- Paciente: desea que el cálculo de su peso ideal sea correcto para recibir un asesoramiento de salud adecuado.
+
+Precondiciones:
+- El sistema está encendido.
+- El sistema funciona correctamente, es decir, está operativo.
+- El profesional de la salud ha iniciado sesión.
+- El sistema se encuentra a la espera de peticiones.
+
+Garantías de éxito:
+- El sistema calcula el PCI correctamente mediante la ecuación de Lorentz correspondiente al género.
+- El sistema muestra el resultado en pantalla.
+
+Garantías mínimas:
+- El sistema no se daña ante datos inválidos.
+- Ante un fallo en la introducción de los datos, el sistema no realiza el cálculo.
+- Ante un fallo en la introducción de los datos, el sistema notifica el error mediante un mensaje.
+
+Disparador: El profesional de la salud selecciona la opción de calcular el PCI (IBW) con la fórmula de Lorentz.
+
+Escenario principal de éxito:
+1. El profesional de la salud selecciona la opción de calcular el PCI con fórmula de Lorentz.
+2. El sistema solicita al profesional de la salud que introduzca el género del paciente.
+3. El profesional de la salud introduce el género del paciente, 'M' para hombre y 'W' para mujer.
+4. El sistema valida que el formato del género introducido es correcto.
+5. El sistema determina qué variante matemática de la ecuación de Lorentz aplicar en función del género.
+6. El sistema solicita al profesional de la salud que introduzca la altura del paciente.
+7. El profesional de la salud introduce la altura del paciente en centímetros.
+8. El sistema valida que la altura introducida esté dentro de unos límites biológicos razonables. (Nota: los límites biológicos razonables fueron definidos en el README del proyecto y también en la implementación de la práctica 1)
+9. El sistema calcula el PCI con la ecuación de Lorentz.
+10. El sistema muestra por pantalla el resultado.
+
+Extensiones:
+4a. El género introducido es inválido, es decir, es distinto a 'M' o 'W': el sistema interrumpe el proceso y muestra un mensaje de error para después volver al paso 2.
+7a. El profesional de la salud introduce caracteres que no son numéricos o deja el campo vacío: el sistema detecta que el formato no es válido y muestra el mensaje de error correspondiente para después volver a solicitar el parámetro volviendo al paso 6.
+8a. La altura introducida está fuera de los límites razonables: el sistema rechaza el valor que está fuera de los límites razonables y muestra el mensaje de error correspondiente para después volver al paso 6.
