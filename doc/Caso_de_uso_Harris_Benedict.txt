@@ -1,0 +1,46 @@
+ID: CU_TMB_HARRIS-BENEDICT
+Nombre del caso de uso: Calcular TMB con ecuación de Harris-Benedict
+Descripción: El profesional de la salud desea calcular la TMB (tasa metabólica basal) de un paciente usando la ecuación de Harris-Benedict. El sistema debe hacer este cálculo a partir del género, peso, altura y edad del paciente, y también debe verificar que los datos introducidos sean válidos para el género y razonables para el resto de parámetros. El sistema finalmente debe mostrar por pantalla el cálculo realizado, es decir, la TMB del paciente. (Nota: los límites razonables para los parámetros se encuentran en el README del proyecto, y también en la implementación de la práctica 1).
+Actor principal: Profesional de la salud
+Ámbito: Calculadora de salud (HealthCalc)
+Nivel: Objetivo de usuario
+
+Stakeholders e intereses:
+- Profesional de la salud: desea obtener un cálculo que sea rápido y preciso, y que además no presente errores, para poder planificar el tratamiento del paciente o incluso su dieta.
+- Paciente: el paciente desea que el cálculo de su TMB sea correcto para que el profesional tome decisiones acertadas con respecto a su salud.
+
+Precondiciones:
+- El profesional de la salud ha iniciado sesión.
+- El profesional se encuentra en la pantalla principal de la calculadora y el sistema está, por tanto, a la espera de peticiones.
+
+Garantías de éxito:
+- El sistema calcula la TMB correctamente mediante la ecuación de Harris-Benedict correspondiente.
+- El sistema muestra el resultado en pantalla.
+
+Garantías mínimas:
+- El sistema no se daña ante datos inválidos.
+- Ante un fallo en la introducción de los datos, el sistema no realiza el cálculo.
+- Ante un fallo en la introducción de los datos, el sistema notifica el error mediante un mensaje.
+
+Disparador: El profesional de la salud selecciona la opción de calcular la TMB con ecuación de Harris-Benedict.
+
+Escenario principal de éxito:
+1. El profesional de la salud selecciona la opción de calcular la TMB con ecuación de Harris-Benedict.
+2. El sistema solicita al profesional de la salud que introduzca el género del paciente.
+3. El profesional de la salud introduce el género del paciente, 'M' para hombre y 'W' para mujer.
+4. El sistema valida que el formato del género introducido es correcto.
+5. El sistema determina qué variante de la ecuación de Harris-Benedict aplicar en función del género introducido.
+6. El sistema solicita al profesional de la salud que introduzca el peso del paciente.
+7. El profesional de la salud introduce el peso del paciente en kilogramos.
+8. El sistema solicita al profesional de la salud que introduzca la altura del paciente.
+9. El profesional de la salud introduce la altura del paciente en centímetros.
+10. El sistema solicita al profesional de la salud que introduzca la edad del paciente.
+11. El profesional de la salud introduce la edad del paciente en años. 
+12. El sistema valida que los datos introducidos sobre el peso, la altura y la edad estén dentro de unos límites razonables. (Nota: los límites razonables para los parámetros se encuentran en el README del proyecto, y también en la implementación de la práctica 1).
+13. El sistema calcula la TMB con la ecuación de Harris-Benedict.
+14. El sistema muestra por pantalla el resultado.
+
+Extensiones:
+4a. El género introducido es inválido, es decir, es distinto a 'M' o 'W': el sistema interrumpe el proceso y muestra un mensaje de error para después volver al paso 2.
+7a, 9a, 11a. El profesional de la salud introduce caracteres que no son numéricos o deja el campo vacío: el sistema detecta que el formato no es válido y muestra el mensaje de error correspondiente para después volver a solicitar el parámetro volviendo al paso 6, 8 ó 10 respectivamente.
+12a. Alguno de los parámetros introducidos está fuera de los límites razonables: el sistema rechaza el/los valor/es que esté/n fuera de los límites razonables y muestra el mensaje de error correspondiente para después volver al paso 6, 8 ó 10 según si el parámetro introducido fuera de lugar ha sido el peso, la altura o la edad, respectivamente.
