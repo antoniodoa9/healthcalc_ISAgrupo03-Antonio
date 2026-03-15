@@ -330,3 +330,10 @@ Para cada categoría, probamos valores que están justo en el límite para asegu
 - Ejecutar los tests con informe de cobertura (previamente configurado en pom.xml): `mvn test`
 
 </details>
+
+## Especificación
+
+### Casos de uso
+
+* [Calcular TMB con ecuación de Harris-Benedict](doc/Caso_de_uso_Harris_Benedict.txt)
+* [Calcular PCI con fórmula de Lorentz](doc/Caso_de_uso_Lorentz.txt)
