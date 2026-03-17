@@ -1,6 +1,6 @@
 ID: CU_IMC
-Caso de uso: Calcular IMC y su clasificación
-Descripción: El profesional de la salud desea calcular el IMC (indice de masa corporal) de un paciente y obtener su clasificación. Para ello, el sistema pedirá el peso y la altura del paciente, y verificará que los datos introducidos sean numéricos y estén dentro de los límites definidos. Tras todo esto, el sistema calculará el valor del IMC y la categoría correspondiente, y finalmente mostrará ambos resultados por pantalla.
+Caso de uso: Calcular IMC
+Descripción: El profesional de la salud desea calcular el IMC (indice de masa corporal) de un paciente. Para ello, el sistema pedirá el peso y la altura del paciente, y verificará que los datos introducidos sean numéricos y estén dentro de los límites definidos. Tras todo esto, el sistema calculará el valor del IMC, y finalmente mostrará el resultado por pantalla.
 Actor principal: Profesional de la salud
 Ámbito: Calculadora de salud (HealthCalc)
 Nivel: Objetivo de usuario
@@ -15,8 +15,7 @@ Precondiciones:
 
 Garantías de éxito:
 - El sistema calcula el valor del IMC correctamente.
-- El sistema determina la clasificación correcta basándose en el IMC obtenido.
-- El sistema muestra por pantalla el IMC y la clasificación.
+- El sistema muestra por pantalla el IMC.
 
 Garantías mínimas:
 - El sistema no se daña si se han introducido datos inválidos.
@@ -36,8 +35,6 @@ Escenario principal de éxito:
 8. El sistema valida que los datos introducidos sobre el peso y la altura estén dentro de los límites definidos. 
 9. El sistema calcula el IMC.
 10. El sistema muestra por pantalla el valor del IMC calculado.
-11. El sistema determina la clasificación usando el valor del IMC.
-12. El sistema muestra por pantalla la clasificación.
 
 Extensiones:
 4a, 7a. El profesional de la salud introduce caracteres que no son numéricos o deja el campo vacío: el sistema detecta que el formato no es válido y muestra el mensaje de error correspondiente para después volver a solicitar el parámetro volviendo al paso 3 ó 6 respectivamente.
