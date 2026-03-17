@@ -1,0 +1,44 @@
+ID: CU_IMC
+Caso de uso: Calcular IMC y su clasificación
+Descripción: El profesional de la salud desea calcular el IMC (indice de masa corporal) de un paciente y obtener su clasificación. Para ello, el sistema pedirá el peso y la altura del paciente, y verificará que los datos introducidos sean numéricos y estén dentro de los límites definidos. Tras todo esto, el sistema calculará el valor del IMC y la categoría correspondiente, y finalmente mostrará ambos resultados por pantalla.
+Actor principal: Profesional de la salud
+Ámbito: Calculadora de salud (HealthCalc)
+Nivel: Objetivo de usuario
+
+Stakeholders e intereses:
+- Profesional de la salud: quiere un resultado correcto que se calcule de manera rápida y precisa, para poder planificar el tratamiento del paciente o incluso su dieta.
+- Paciente: quiere que el cálculo de su IMC sea correcto para que el profesional tome decisiones acertadas con respecto a su salud.
+
+Precondiciones:
+- El profesional de la salud ha iniciado sesión.
+- El profesional de la salud se encuentra en la pantalla principal de la calculadora y el sistema está a la espera de peticiones.
+
+Garantías de éxito:
+- El sistema calcula el valor del IMC correctamente.
+- El sistema determina la clasificación correcta basándose en el IMC obtenido.
+- El sistema muestra por pantalla el IMC y la clasificación.
+
+Garantías mínimas:
+- El sistema no se daña si se han introducido datos inválidos.
+- El sistema no realiza el cálculo ante un fallo en la introducción de los datos.
+- El sistema notifica el error mediante un mensaje ante un fallo en la introducción de los datos.
+
+Disparador: El profesional de la salud selecciona la opción de calcular el IMC
+
+Escenario principal de éxito:
+1. El profesional de la salud selecciona la opción de calcular el IMC.
+2. El sistema solicita al profesional de la salud que introduzca el peso del paciente
+3. El profesional de la salud introduce el peso del paciente en kilogramos
+4. El sistema valida que el formato del peso introducido es correcto.
+5. El sistema solicita al profesional de la salud que introduzca la altura del paciente.
+6. El profesional de la salud introduce la altura del paciente en metros. 
+7. El sistema valida que el formato de la altura introducida es correcto.
+8. El sistema valida que los datos introducidos sobre el peso y la altura estén dentro de los límites definidos. 
+9. El sistema calcula el IMC.
+10. El sistema muestra por pantalla el valor del IMC calculado.
+11. El sistema determina la clasificación usando el valor del IMC.
+12. El sistema muestra por pantalla la clasificación.
+
+Extensiones:
+4a, 7a. El profesional de la salud introduce caracteres que no son numéricos o deja el campo vacío: el sistema detecta que el formato no es válido y muestra el mensaje de error correspondiente para después volver a solicitar el parámetro volviendo al paso 3 ó 6 respectivamente.
+8a. Alguno de los parámetros introducidos está fuera de los límites razonables: el sistema rechaza el/los valor/es que esté/n fuera de los límites razonables y muestra el mensaje de error correspondiente para después volver al paso 3 ó 6 según si el parámetro introducido fuera de lugar ha sido el peso o la altura, respectivamente.
