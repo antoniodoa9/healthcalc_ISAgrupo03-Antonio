@@ -1,5 +1,5 @@
 Feature: Cálculo de la TMB con ecuación de Harris-Benedict
-    Como profesional de la salud
+  Como profesional de la salud
   Quiero calcular la tasa metabólica basal (TMB) de un paciente usando la ecuación de Harris-Benedict
   Para obtener una estimación de la cantidad mínima de energía que necesita y poder planificar un tratamiento o incluso su dieta
 
