@@ -335,7 +335,21 @@ Para cada categoría, probamos valores que están justo en el límite para asegu
 
 En esta sección se describen las pruebas de comportamiento realizadas utilizando Cucumber y Gherkin para las métricas de salud implementadas.
 
-### Cálculo del Peso Corporal Ideal (IBW) - Fórmula de Lorentz
+### Cálculo de la Tasa Metabólica Basal (TMB) con ecuación de Harris-Benedict
+
+**Historia de Usuario:**
+> **Como** profesional de la salud,
+> **quiero** calcular la tasa metabólica basal (TMB) de un paciente usando la ecuación de Harris-Benedict,
+> **para** obtener una estimación de la cantidad mínima de energía que necesita y poder planificar un tratamiento o incluso su dieta.
+
+**Escenarios probados:**
+* **Cálculo correcto de la TMB con valores válidos:** Se comprueba la exactitud de la ecuación de Harris-Benedict para hombres y mujeres con diferentes pesos, alturas y edades dentro de los parámetros normales.
+* **Intento de cálculo de la TMB con datos inválidos:** Se verifica que el sistema lanza la excepción correspondiente al introducir valores nulos, variables negativas o un género no válido.
+* **Casos límite:** Se comprueba el bloqueo de seguridad del sistema ante valores fuera de un límite razonable (pesos o alturas extremadamente bajos o altos, edades extremadamente altas).
+
+[Ver archivo de especificación Gherkin (harris_benedict.feature)](java-project-healthcalc/src/test/resources/healthcalc/harris_benedict.feature)
+
+### Cálculo del Peso Corporal Ideal (IBW) - con fórmula de Lorentz
 
 **Historia de Usuario:**
 > **Como** profesional de la salud,
@@ -347,4 +361,4 @@ En esta sección se describen las pruebas de comportamiento realizadas utilizand
 * **Intento de cálculo con datos inválidos:** Se verifica que el sistema lanza una excepción ante géneros no reconocidos, alturas negativas o valores nulos.
 * **Casos límite:** Se comprueba el comportamiento ante alturas biológicamente imposibles (extremadamente bajas o altas).
 
-🔗 [Ver archivo de especificación Gherkin (IBW.feature)](java-project-healthcalc/src/test/resources/healthcalc/IBW.feature)
+[Ver archivo de especificación Gherkin (IBW.feature)](java-project-healthcalc/src/test/resources/healthcalc/IBW.feature)
