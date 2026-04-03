@@ -4,7 +4,7 @@ Feature: Cálculo del PCI (Peso Corporal Ideal) con fórmula de Lorentz
   Para establecer un objetivo de peso saludable basado en su género y altura
 
   Background:
-    Given la calculadora de salud está iniciada
+    Given la calculadora de salud está iniciada para el PCI
 
   @HighPriority
   Scenario Outline: Cálculo correcto del PCI con valores válidos 
@@ -24,7 +24,7 @@ Feature: Cálculo del PCI (Peso Corporal Ideal) con fórmula de Lorentz
   Scenario Outline: Intento de cálculo del PCI con datos inválidos
     Given los datos del paciente son altura <altura> cm y género '<genero>'
     When ejecuto el cálculo del PCI
-    Then el sistema debe lanzar una excepción indicando que los datos de salud son inválidos
+    Then el sistema debe lanzar una excepción indicando que los datos de salud son inválidos para el PCI
 
     @ErrorHandling
     Examples: Ceros, género invalido y variables negativas
