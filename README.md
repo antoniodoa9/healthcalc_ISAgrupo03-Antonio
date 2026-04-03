@@ -330,3 +330,21 @@ Para cada categoría, probamos valores que están justo en el límite para asegu
 - Ejecutar los tests con informe de cobertura (previamente configurado en pom.xml): `mvn test`
 
 </details>
+
+## Behaviour Driven Development (BDD)
+
+En esta sección se describen las pruebas de comportamiento realizadas utilizando Cucumber y Gherkin para las métricas de salud implementadas.
+
+### Cálculo del Peso Corporal Ideal (IBW) - Fórmula de Lorentz
+
+**Historia de Usuario:**
+> **Como** profesional de la salud,
+> **quiero** calcular el peso corporal ideal (IBW o PCI) de un paciente usando la fórmula de Lorentz,
+> **para** establecer un objetivo de peso saludable basado en su género y altura.
+
+**Escenarios probados:**
+* **Cálculo correcto del PCI con valores válidos:** Se comprueba la exactitud de la fórmula para hombres y mujeres con alturas estándar.
+* **Intento de cálculo con datos inválidos:** Se verifica que el sistema lanza una excepción ante géneros no reconocidos, alturas negativas o valores nulos.
+* **Casos límite:** Se comprueba el comportamiento ante alturas biológicamente imposibles (extremadamente bajas o altas).
+
+🔗 [Ver archivo de especificación Gherkin (IBW.feature)](java-project-healthcalc/src/test/resources/healthcalc/IBW.feature)
