@@ -10,7 +10,7 @@ Background:
 Scenario Outline: Clasificación correcta del estado nutricional basado en el IMC
   Given el valor calculado de IMC es <imc_calculado>
   When ejecuto la clasificación del IMC
-  Then la categoría devuelta debe ser "<categoría_esperada>"
+  Then la categoría devuelta debe ser "<categoria_esperada>"
 
   Examples:
     | imc_calculado | categoria_esperada |
@@ -26,7 +26,7 @@ Scenario Outline: Clasificación correcta del estado nutricional basado en el IM
 Scenario Outline: Intento de clasificación con valores inválidos de IMC
   Given el valor calculado de IMC es <imc_calculado>
   When ejecuto la clasificación del IMC
-  Then el sistema debe lanzar una excepción indicando que los datos de salud son inválidos
+  Then el sistema debe lanzar una excepción indicando que los datos de salud son inválidos para el IMC
 
   @ErrorHandling
   Examples: Valores negativos o excesivamente altos
