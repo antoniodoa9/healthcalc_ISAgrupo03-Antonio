@@ -4,7 +4,7 @@ Feature: Cálculo del IMC (Índice de Masa Corporal)
   Para valorar su estado nutricional relacionando su peso y altura 
 
   Background:
-  Given la calculadora de salud está iniciada
+  Given la calculadora de salud está iniciada para el IMC
 
   @HighPriority
   Scenario Outline: Cálculo correcto del IMC con valores válidos 

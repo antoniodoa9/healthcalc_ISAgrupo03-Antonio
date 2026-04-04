@@ -4,7 +4,7 @@ Feature: Clasificación del IMC
   Para determinar su categoría nutricional
 
 Background:
-  Given la calculadora de salud está iniciada
+  Given la calculadora de salud está iniciada para el IMC
 
 @HighPriority
 Scenario Outline: Clasificación correcta del estado nutricional basado en el IMC
