@@ -335,6 +335,34 @@ Para cada categoría, probamos valores que están justo en el límite para asegu
 
 En esta sección se describen las pruebas de comportamiento realizadas utilizando Cucumber y Gherkin para las métricas de salud implementadas.
 
+### Cálculo del IMC (BMI)
+
+**Historia de Usuario:**
+> **Como** profesional de la salud, 
+> **quiero** calcular el IMC de un paciente, 
+> **para** evaluar su estado nutricional relacionando su peso y altura.
+
+**Escenarios probados**
+* **Cálculo correcto del IMC con valores válidos:** se comprueba que el cálculo matemático es exacto para diferentes combinaciones de peso y altura.
+* **Intento de cálculo del IMC con datos inválidos:** se verifica que el sistema se protege y lanza excepciones al introducir ceros o valores negativos.
+
+* **Casos límite:** Se comprueba el bloqueo de seguridad del sistema ante números biológicamente imposibles.
+
+[Ver archivo de especificación Gherkin (BMI_calculo.feature)](java-project-healthcalc/src/test/resources/healthcalc/BMI_calculo.feature)
+
+### Clasificación del IMC (BMI)
+
+**Historia de Usuario:**
+> **Como** profesional de la salud, 
+> **quiero** obtener la clasificación del IMC de un paciente, 
+> **para** determinar su categoría nutricional.
+
+**Escenarios probados**
+* **Clasificación correcta del estado nutricional basao en el IMC:** se verifica que el sistema devuelve la etiqueta de texto exacta para cada rango de valores calculado.
+* **Intento de clasificación con datos inválidos de IMC:** se comprueba el manejo de errores si se intenta clasificar un IMC negativo o excesivamente alto.
+
+[Ver archivo de especificación Gherkin (BMI_clasificacion.feature)](java-project-healthcalc/src/test/resources/healthcalc/BMI_clasificacion.feature)
+
 ### Cálculo de la Tasa Metabólica Basal (TMB) con ecuación de Harris-Benedict
 
 **Historia de Usuario:**
