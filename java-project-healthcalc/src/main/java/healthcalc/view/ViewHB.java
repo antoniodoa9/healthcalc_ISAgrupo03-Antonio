@@ -9,7 +9,7 @@ public interface ViewHB {
     
     public double getWeight();
 
-    public double getHeight();
+    public double getHeightValue();
 
     public int getAge();
 
