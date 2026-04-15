@@ -31,7 +31,7 @@ public class ViewIBWImpl extends JPanel implements ViewIBW {
 		setLayout(new BorderLayout(10, 10));
 		setBorder(new EmptyBorder(20, 20, 20, 20));
 		
-		JLabel lblTitulo = new JLabel("Peso Corporal Ideal (Fórmula de Lorentz)");
+		JLabel lblTitulo = new JLabel("Peso corporal ideal (Fórmula de Lorentz)");
 		lblTitulo.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
 		add(lblTitulo, BorderLayout.NORTH);
