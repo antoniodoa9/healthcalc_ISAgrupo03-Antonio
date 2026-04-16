@@ -111,14 +111,14 @@ public class BMITest {
 
         @ParameterizedTest(name = "BMI {0} debe ser clasificado como {1}")
         @CsvSource({
-            "15.0, Severe Thinness",
-            "16.5, Moderate Thinness",
-            "18.0, Mild Thinness",
+            "15.0, Delgadez severa",
+            "16.5, Delgadez moderada",
+            "18.0, Delgadez leve",
             "22.0, Normal",
-            "27.0, Overweight",
-            "32.0, Obese Class I",
-            "37.0, Obese Class II",
-            "45.0, Obese Class III"
+            "27.0, Sobrepeso",
+            "32.0, Obesidad Clase I",
+            "37.0, Obesidad Clase II",
+            "45.0, Obesidad Clase III"
         })
         @DisplayName("Clasificación de las 8 categorías de BMI")
         void testBmiClassificationCompleta(double bmi, String expected) throws InvalidHealthDataException {
