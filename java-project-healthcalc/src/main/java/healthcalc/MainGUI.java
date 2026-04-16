@@ -4,6 +4,12 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JTabbedPane;
+import javax.swing.text.View;
+
+import healthcalc.controller.CtrHB;
+import healthcalc.view.ViewHBImpl;
+import healthcalc.view.ViewIBWImpl;
+
 import java.awt.BorderLayout;
 
 public class MainGUI {
@@ -39,12 +45,25 @@ public class MainGUI {
 	private void initialize() {
 		frmHealthcalc = new JFrame();
 		frmHealthcalc.setTitle("HealthCalc");
-		frmHealthcalc.setBounds(100, 100, 600, 500);
-		frmHealthcalc.setLocationRelativeTo(null);
-		frmHealthcalc.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
+		frmHealthcalc.setBounds(100, 100, 450, 400);
+		frmHealthcalc.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		frmHealthcalc.getContentPane().add(tabbedPane, BorderLayout.CENTER);
+
+		HealthCalc model = new HealthCalcImpl();
+		// ViewBMIImpl viewBMI = new ViewBMIImpl();
+		ViewHBImpl viewHB = new ViewHBImpl();
+		ViewIBWImpl viewIBW = new ViewIBWImpl();
+		// CtrBMI ctrBMI = new CtrBMI(model, viewBMI);
+		// CtrIBW ctrIBW = new CtrIBW(model, viewIBW);
+		CtrHB ctrHB = new CtrHB(model, viewHB);
+		// viewBMI.setController(ctrBMI);
+		// viewIBW.setController(ctrIBW);
+		viewHB.setController(ctrHB);
+		// tabbedPane.addTab("BMI", viewBMI);
+		tabbedPane.addTab("IBW", viewIBW);
+		tabbedPane.addTab("TMB", viewHB);
+		
 	}
 
 }
