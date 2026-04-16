@@ -40,9 +40,13 @@ public class ViewIBWImpl extends JPanel implements ViewIBW {
 		panelEnvoltorio.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		add(panelEnvoltorio, BorderLayout.CENTER);
 				
+		JPanel panelContenedor = new JPanel();
+		panelContenedor.setLayout(new BorderLayout(0, 10));
+		panelEnvoltorio.add(panelContenedor);
+
 		JPanel panel = new JPanel();
-		panel.setLayout(new GridLayout(3, 2, 10, 15));
-		panelEnvoltorio.add(panel); 
+		panel.setLayout(new GridLayout(2, 2, 10, 15));
+		panelContenedor.add(panel, BorderLayout.NORTH); 
 		
 		JLabel lblNewLabel_2 = new JLabel("Altura (cm):");
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
@@ -71,31 +75,31 @@ public class ViewIBWImpl extends JPanel implements ViewIBW {
 		buttonGroup.add(rbMujer);
 		panel_1.add(rbMujer);
 		
-		JLabel lblNewLabel_5 = new JLabel("PCI:");
-		lblNewLabel_5.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblNewLabel_5.setHorizontalAlignment(SwingConstants.CENTER);
-		panel.add(lblNewLabel_5);
-		
-		lblResultado = new JLabel("---");
-		lblResultado.setBorder(new CompoundBorder(new LineBorder(new Color(64, 64, 64), 2), new EmptyBorder(5, 5, 5, 5)));
-		lblResultado.setFont(new Font("Tahoma", Font.BOLD, 16));
-		panel.add(lblResultado);
-		
-		JPanel panel_2 = new JPanel();
-		add(panel_2, BorderLayout.SOUTH);
-		panel_2.setLayout(new BorderLayout(5, 5));
+		JPanel panel_AbajoFormulario = new JPanel();
+		panel_AbajoFormulario.setLayout(new BorderLayout(0, 5));
+		panelContenedor.add(panel_AbajoFormulario, BorderLayout.CENTER);
 		
 		lblMensajeError = new JLabel("");
 		lblMensajeError.setForeground(Color.RED);
 		lblMensajeError.setHorizontalAlignment(SwingConstants.CENTER);
 		lblMensajeError.setBackground(Color.WHITE);
-		panel_2.add(lblMensajeError, BorderLayout.NORTH);
+		panel_AbajoFormulario.add(lblMensajeError, BorderLayout.NORTH);
+
+		JPanel panel_Resultado = new JPanel();
+		panel_AbajoFormulario.add(panel_Resultado, BorderLayout.CENTER);
+		panel_Resultado.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
-		JPanel panel_3 = new JPanel();
-		panel_2.add(panel_3, BorderLayout.CENTER);
+		lblResultado = new JLabel("PCI: ---");
+		lblResultado.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblResultado.setBorder(new CompoundBorder(new LineBorder(new Color(64, 64, 64), 2), new EmptyBorder(5, 5, 5, 5)));
+		panel_Resultado.add(lblResultado);
+		
+		JPanel panel_2 = new JPanel();
+		panel_2.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		add(panel_2, BorderLayout.SOUTH);
 		
 		btnCalcular = new JButton("Calcular");
-		panel_3.add(btnCalcular);
+		panel_2.add(btnCalcular);
 	}
 
 	@Override
@@ -110,14 +114,14 @@ public class ViewIBWImpl extends JPanel implements ViewIBW {
 
 	@Override
 	public void setResult(double pci) {
-		lblResultado.setText(String.format("%.2f kg", pci));
+		lblResultado.setText(String.format("IBW: %.2f kg", pci));
 		lblMensajeError.setText("");
 	}
 
 	@Override
 	public void setMessage(String msg) {
 		lblMensajeError.setText(msg);
-		lblResultado.setText("---");
+		lblResultado.setText("IBW:---");
 	}
 
 	@Override
