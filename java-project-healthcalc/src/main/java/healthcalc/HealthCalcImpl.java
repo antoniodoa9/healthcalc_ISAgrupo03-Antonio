@@ -7,28 +7,28 @@ public class HealthCalcImpl implements HealthCalc {
     @Override
     public String bmiClassification(double bmi) throws InvalidHealthDataException {
         if (bmi < 0) {
-            throw new InvalidHealthDataException("BMI cannot be negative.");
+            throw new InvalidHealthDataException("El IMC no puede ser negativo.");
         }
         if (bmi > 150) {
-            throw new InvalidHealthDataException("BMI must be within a possible biological range [0-150].");
+            throw new InvalidHealthDataException("El IMC debe estar dentro de un rango posible [0-150].");
         }
         
         if (bmi < 16.0) {
-            return "Severe Thinness";
+            return "Delgadez severa";
         } else if (bmi < 17.0) {
-            return "Moderate Thinness";
+            return "Delgadez moderada";
         } else if (bmi < 18.5) {
-            return "Mild Thinness";
+            return "Delgadez leve";
         } else if (bmi < 25.0) {
             return "Normal";
         } else if (bmi < 30.0) {
-            return "Overweight";
+            return "Sobrepeso";
         } else if (bmi < 35.0) {
-            return "Obese Class I";
+            return "Obesidad Clase I";
         } else if (bmi < 40.0) {
-            return "Obese Class II";
+            return "Obesidad Clase II";
         } else {
-            return "Obese Class III";
+            return "Obesidad Clase III";
         }
         
     }
@@ -36,16 +36,16 @@ public class HealthCalcImpl implements HealthCalc {
     @Override
     public double bmi(double weight, double height) throws InvalidHealthDataException {
         if (weight <= 0) {
-            throw new InvalidHealthDataException("Weight must be positive.");
+            throw new InvalidHealthDataException("El peso debe ser positivo.");
         }
         if (height <= 0) {
-            throw new InvalidHealthDataException("Height must be positive.");
+            throw new InvalidHealthDataException("La altura debe ser positiva.");
         }
         if (weight < 1 || weight > 700) {
-            throw new InvalidHealthDataException("Weight must be within a possible biological range [1-700] kg.");
+            throw new InvalidHealthDataException("El peso debe estar dentro de un rango posible [1-700] kg.");
         }
         if (height < 0.30 || height > 3.00) {
-            throw new InvalidHealthDataException("Height must be within a possible biological range [0.30-3.00] m.");
+            throw new InvalidHealthDataException("La altura debe estar dentro de un rango posible [0.30-3.00] m.");
         }
         return weight / Math.pow(height, 2);
     }
@@ -53,25 +53,25 @@ public class HealthCalcImpl implements HealthCalc {
     @Override
     public double harrisBenedict(double weight, double height, char gender, int age) throws InvalidHealthDataException {
         if (gender != 'M' && gender != 'W') {
-            throw new InvalidHealthDataException("Gender must be 'M' or 'W'.");
+            throw new InvalidHealthDataException("El género debe ser 'M' o 'W'.");
         }
         if (weight <= 0) {
-            throw new InvalidHealthDataException("Weight must be positive.");
+            throw new InvalidHealthDataException("El peso debe ser positivo.");
         }
         if (height <= 0) {
-            throw new InvalidHealthDataException("Height must be positive.");
+            throw new InvalidHealthDataException("La altura debe ser positiva.");
         }
         if (age < 0) {
-            throw new InvalidHealthDataException("Age cannot be negative.");
+            throw new InvalidHealthDataException("La edad no puede ser negativa.");
         }
         if (weight < 1 || weight > 700) {
-            throw new InvalidHealthDataException("Weight must be within a possible biological range, this is, between 1 and 700 kg.");
+            throw new InvalidHealthDataException("El peso debe estar dentro de un rango posible [1-700] kg.");
         }
         if (height < 30 || height > 300) {
-            throw new InvalidHealthDataException("Height must be within a possible biological range, this is, between 30 and 300 cm.");
+            throw new InvalidHealthDataException("La altura debe estar dentro de un rango posible [30-300] cm.");
         }
         if (age > 120) {
-            throw new InvalidHealthDataException("Age must be within a possible biological range, this is, between 0 and 120 years.");
+            throw new InvalidHealthDataException("La edad debe estar dentro de un rango posible [0-120] años.");
         }
 
         double bmr = 0.0;
@@ -86,14 +86,14 @@ public class HealthCalcImpl implements HealthCalc {
     @Override
     public double idealBodyWeight(double height, char gender) throws InvalidHealthDataException {
         if (gender != 'M' && gender != 'W') {
-            throw new InvalidHealthDataException("Gender must be 'M' or 'W'.");
+            throw new InvalidHealthDataException("El género debe ser 'M' o 'W'.");
         }
         
         if (height <= 0) {
-            throw new InvalidHealthDataException("Height must be positive.");
+            throw new InvalidHealthDataException("La altura debe ser positiva.");
         }
         if (height < 30 || height > 300) {
-            throw new InvalidHealthDataException("Height must be within a possible biological range, this is, between 30 and 300 cm.");
+            throw new InvalidHealthDataException("La altura debe estar dentro de un rango posible [30-300] cm.");
         }
 
         double ibw = 0.0;
