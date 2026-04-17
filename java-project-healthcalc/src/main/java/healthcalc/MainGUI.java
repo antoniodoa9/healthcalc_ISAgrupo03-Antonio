@@ -7,6 +7,7 @@ import javax.swing.JTabbedPane;
 import javax.swing.text.View;
 
 import healthcalc.controller.CtrHB;
+import healthcalc.controller.CtrIBW;
 import healthcalc.view.ViewHBImpl;
 import healthcalc.view.ViewIBWImpl;
 
@@ -55,10 +56,10 @@ public class MainGUI {
 		ViewHBImpl viewHB = new ViewHBImpl();
 		ViewIBWImpl viewIBW = new ViewIBWImpl();
 		// CtrBMI ctrBMI = new CtrBMI(model, viewBMI);
-		// CtrIBW ctrIBW = new CtrIBW(model, viewIBW);
+		CtrIBW ctrIBW = new CtrIBW(model, viewIBW);
 		CtrHB ctrHB = new CtrHB(model, viewHB);
 		// viewBMI.setController(ctrBMI);
-		// viewIBW.setController(ctrIBW);
+		viewIBW.setController(ctrIBW);
 		viewHB.setController(ctrHB);
 		// tabbedPane.addTab("BMI", viewBMI);
 		tabbedPane.addTab("IBW", viewIBW);
