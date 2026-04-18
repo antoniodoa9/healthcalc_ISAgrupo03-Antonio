@@ -34,68 +34,68 @@ public class ViewBMIImpl extends JPanel implements ViewBMI {
         lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
         add(lblTitulo, BorderLayout.NORTH);
         
-        JPanel panelEnvoltorio = new JPanel();
-        panelEnvoltorio.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
-        add(panelEnvoltorio, BorderLayout.CENTER);
+        JPanel panel = new JPanel();
+        panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+        add(panel, BorderLayout.CENTER);
         
-        JPanel panelContenedor = new JPanel();
-        panelContenedor.setLayout(new BorderLayout(0, 10));
-        panelEnvoltorio.add(panelContenedor);
+        JPanel panel_1 = new JPanel();
+        panel_1.setLayout(new BorderLayout(0, 10));
+        panel.add(panel_1);
         
-        JPanel panelFormulario = new JPanel();
-        panelFormulario.setLayout(new GridLayout(2, 2, 10, 15));
-        panelContenedor.add(panelFormulario, BorderLayout.NORTH);
+        JPanel panel_2 = new JPanel();
+        panel_2.setLayout(new GridLayout(2, 2, 10, 15));
+        panel_1.add(panel_2, BorderLayout.NORTH);
         
-        JLabel lblPeso = new JLabel("Peso (kg):");
-        lblPeso.setHorizontalAlignment(SwingConstants.CENTER);
-        panelFormulario.add(lblPeso);
+        JLabel lblNewLabel = new JLabel("Peso (kg):");
+        lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        panel_2.add(lblNewLabel);
         
         txtPeso = new JTextField();
-        panelFormulario.add(txtPeso);
-        txtPeso.setColumns(10);
+        panel_2.add(txtPeso);
+        txtPeso.setColumns(13);
         
-        JLabel lblAltura = new JLabel("Altura (m):");
-        lblAltura.setHorizontalAlignment(SwingConstants.CENTER);
-        panelFormulario.add(lblAltura);
+        JLabel lblNewLabel_1 = new JLabel("Altura (m):");
+        lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+        panel_2.add(lblNewLabel_1);
         
         txtAltura = new JTextField();
-        panelFormulario.add(txtAltura);
-        txtAltura.setColumns(10);
+        panel_2.add(txtAltura);
+        txtAltura.setColumns(13);
         
-        JPanel panelAbajoFormulario = new JPanel();
-        panelAbajoFormulario.setLayout(new BorderLayout(0, 5));
-        panelContenedor.add(panelAbajoFormulario, BorderLayout.CENTER);
+        JPanel panel_3 = new JPanel();
+        panel_3.setLayout(new BorderLayout(0, 5));
+        panel_1.add(panel_3, BorderLayout.CENTER);
         
         lblMensajeError = new JLabel("");
         lblMensajeError.setForeground(Color.RED);
         lblMensajeError.setHorizontalAlignment(SwingConstants.CENTER);
         lblMensajeError.setBackground(Color.WHITE);
-        panelAbajoFormulario.add(lblMensajeError, BorderLayout.NORTH);
+        panel_3.add(lblMensajeError, BorderLayout.NORTH);
         
-        JPanel panelResultadosEnvoltorio = new JPanel();
-        panelResultadosEnvoltorio.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
-        panelAbajoFormulario.add(panelResultadosEnvoltorio, BorderLayout.CENTER);
+        JPanel panel_4 = new JPanel();
+        panel_4.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+        panel_3.add(panel_4, BorderLayout.CENTER);
         
-        JPanel panelResultado = new JPanel();
-        panelResultado.setLayout(new GridLayout(2, 1, 0, 10));
-        panelResultadosEnvoltorio.add(panelResultado);
+        JPanel panel_5 = new JPanel();
+        panel_5.setLayout(new GridLayout(2, 1, 0, 10));
+        panel_4.add(panel_5);
         
         lblResultado = new JLabel("BMI: ---");
         lblResultado.setFont(new Font("Tahoma", Font.BOLD, 14));
         lblResultado.setBorder(new CompoundBorder(new LineBorder(new Color(64, 64, 64), 2), new EmptyBorder(5, 5, 5, 5)));
-        panelResultado.add(lblResultado);
+        panel_5.add(lblResultado);
         
         lblClasificacion = new JLabel("Clasificación: ---");
         lblClasificacion.setFont(new Font("Tahoma", Font.BOLD, 14));
         lblClasificacion.setBorder(new CompoundBorder(new LineBorder(new Color(64, 64, 64), 2), new EmptyBorder(5, 5, 5, 5)));
-        panelResultado.add(lblClasificacion);
+        panel_5.add(lblClasificacion);
         
-        JPanel panelBoton = new JPanel();
-        panelBoton.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
-        add(panelBoton, BorderLayout.SOUTH);
+        JPanel panel_6 = new JPanel();
+        panel_6.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+        add(panel_6, BorderLayout.SOUTH);
         
         btnCalcular = new JButton("Calcular");
-        panelBoton.add(btnCalcular);
+        panel_6.add(btnCalcular);
     }
     
     @Override
