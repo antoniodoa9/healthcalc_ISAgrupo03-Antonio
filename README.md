@@ -330,3 +330,24 @@ Para cada categoría, probamos valores que están justo en el límite para asegu
 - Ejecutar los tests con informe de cobertura (previamente configurado en pom.xml): `mvn test`
 
 </details>
+
+
+### Interfaz gráfica de usuario (GUI)
+
+<details>
+<summary><b>Vistas de la calculadora</b></summary>
+
+### Índice de masa corporal (BMI)
+![Captura del funcionamiento de la pestaña del BMI](doc/gui/captura_BMI_gui.png)
+
+---
+
+### Peso corporal ideal (IBW - Fórmula de Lorentz)
+![Captura del funcionamiento de la pestaña del IBW](doc/gui/captura_IBW_gui.png)
+
+---
+
+### Tasa metabólica basal (TMB - Harris-Benedict)
+![Captura del funcionamiento de la pestaña de la TMB](doc/gui/captura_TMB_gui.png)
+
+</details>
