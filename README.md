@@ -332,7 +332,13 @@ Para cada categoría, probamos valores que están justo en el límite para asegu
 </details>
 
 
-### Interfaz gráfica de usuario (GUI)
+## Interfaz gráfica de usuario (GUI)
+
+### Ejecución de la aplicación
+Para probar la calculadora sin necesidad de abrir el entorno de desarrollo:
+1. Localiza el archivo `HealthCalc_grupo03.jar` en la raíz de este repositorio.
+2. Descarga ese archivo y haz doble clic. Si tienes Java instalado, se ejecutará directamente.
+3. Si prefieres la consola, puedes usar el comando: `java -jar HealthCalc_grupo03.jar`
 
 <details>
 <summary><b>Vistas de la calculadora</b></summary>
