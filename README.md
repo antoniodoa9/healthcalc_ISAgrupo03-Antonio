@@ -432,7 +432,7 @@ Para probar la calculadora sin necesidad de abrir el entorno de desarrollo:
 
 ### 1. Patrón Singleton 
 * **Problema:** Garantizar que la calculadora de salud no se instancie múltiples veces innecesariamente y comparta un único estado global.
-* **Solución:** Se ha modificado `HealthCalcImpl` ocultando su constructor (`private`) y añadiendo un método de acceso global estático `getInstance()`. De esta forma, tanto el entorno de consola como la interfaz gráfica consumen exactamente la misma instancia única.
+* **Solución:** `HealthCalcImpl` oculta su constructor (`private`) y expone `getInstance()` sincronizado para que los accesos concurrentes compartan la misma instancia única.
 * **Diagrama UML:**
   ![Diagrama UML - Singleton](design_patterns/01_Singleton_UML.png)
 
@@ -444,7 +444,7 @@ Para probar la calculadora sin necesidad de abrir el entorno de desarrollo:
 
 ### 3. Patrón Proxy 
 * **Problema:** Llevar un registro e historial de uso clínico de forma anónima capturando los datos introducidos por los pacientes y calculando medias globales a través de la interfaz `HealthStats`, sin alterar el código de la calculadora original ni del adaptador del hospital.
-* **Solución:** Se ha diseñado un proxy de registro (`ProxyHealthCalc`) que implementa simultáneamente `HealthCalc` y `HealthStats`. El proxy se coloca de manera intermedia mediante una relación de agregación, intercepta silenciosamente las llamadas a los métodos de cálculo para almacenar las variables en listas locales y, posteriormente, delega el cálculo real en la instancia original.
+* **Solución:** `ProxyHealthCalc` intercepta los cálculos y delega en la instancia original. Sus estadísticas identifican pacientes por identidad del objeto `Person`, registran sus datos demográficos una sola vez tras un cálculo exitoso y agregan el IMC una sola vez por paciente.
 * **Diagrama UML:**
   ![Diagrama UML - Proxy](design_patterns/03_Proxy_UML.png)
 
