@@ -54,7 +54,7 @@ public class ViewBMIImpl extends JPanel implements ViewBMI {
         panel_2.add(txtPeso);
         txtPeso.setColumns(13);
         
-        JLabel lblNewLabel_1 = new JLabel("Altura (m):");
+        JLabel lblNewLabel_1 = new JLabel("Altura (cm):");
         lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
         panel_2.add(lblNewLabel_1);
         

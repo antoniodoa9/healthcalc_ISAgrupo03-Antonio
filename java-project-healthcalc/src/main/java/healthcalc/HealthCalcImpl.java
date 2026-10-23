@@ -58,7 +58,7 @@ public class HealthCalcImpl implements BodyMassIndex, IdealBodyWeight, BasalMeta
             throw new InvalidHealthDataException("El peso debe estar dentro de un rango posible [1-700] kg.");
         }
         if (height < 0.30 || height > 3.00) {
-            throw new InvalidHealthDataException("La altura debe estar dentro de un rango posible [0.30-3.00] m.");
+            throw new InvalidHealthDataException("La altura debe estar dentro de un rango posible [30-300] cm.");
         }
         return (float) (weight / Math.pow(height, 2));
     }

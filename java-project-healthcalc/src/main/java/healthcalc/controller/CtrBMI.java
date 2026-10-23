@@ -27,7 +27,7 @@ public class CtrBMI implements ActionListener {
         if (command.equalsIgnoreCase("CalcularBMI")) {
             try {
                 float weight = (float) view.getWeight();
-                float height = (float) view.getHeightValue();
+                float height = (float) (view.getHeightValue() / 100.0);
 
                 Person patient = new Patient(weight, height, Gender.MALE, 30);
                 
