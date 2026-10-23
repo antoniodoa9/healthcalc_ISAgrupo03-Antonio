@@ -9,7 +9,7 @@ public class HealthCalcImpl implements BodyMassIndex, IdealBodyWeight, BasalMeta
     private HealthCalcImpl() {
     }
 
-    public static HealthCalcImpl getInstance() {
+    public static synchronized HealthCalcImpl getInstance() {
         if (instance == null) {
             instance = new HealthCalcImpl();
         }

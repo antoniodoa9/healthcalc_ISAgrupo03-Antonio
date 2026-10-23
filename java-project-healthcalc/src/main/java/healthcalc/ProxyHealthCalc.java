@@ -1,117 +1,127 @@
 package healthcalc;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.IdentityHashMap;
+import java.util.Map;
 import healthcalc.exceptions.InvalidHealthDataException;
 
 public class ProxyHealthCalc implements BodyMassIndex, IdealBodyWeight, BasalMetabolicRate, HealthStats {
-    
     private BodyMassIndex bmiCalc;
     private IdealBodyWeight ibwCalc;
     private BasalMetabolicRate bmrCalc;
-    
-    private List<Float> alturas;
-    private List<Float> pesos;
-    private List<Character> generos;
-    private List<Float> imcs;
-    
-    private int totalPacientes; 
+
+    private final Map<Person, PatientStats> patients;
 
     public ProxyHealthCalc(BodyMassIndex bmiCalc, IdealBodyWeight ibwCalc, BasalMetabolicRate bmrCalc) {
         this.bmiCalc = bmiCalc;
         this.ibwCalc = ibwCalc;
         this.bmrCalc = bmrCalc;
-        this.alturas = new ArrayList<>();
-        this.pesos = new ArrayList<>();
-        this.generos = new ArrayList<>();
-        this.imcs = new ArrayList<>();
-        this.totalPacientes = 0;
+        this.patients = new IdentityHashMap<>();
     }
 
     @Override
-    public BMICategory category(Person person)throws InvalidHealthDataException {
-        return bmiCalc.category(person);
+    public BMICategory category(Person person) throws InvalidHealthDataException {
+        BMICategory category = bmiCalc.category(person);
+        recordPatient(person, false, 0f);
+        return category;
     }
-    
+
     @Override
     public float bodyMassIndex(Person person) throws InvalidHealthDataException {
-        float res = bmiCalc.bodyMassIndex(person);
-
-        pesos.add(person.weight());
-        alturas.add(person.height());
-        totalPacientes++;
-        imcs.add(res);
-
-        return res;
+        float result = bmiCalc.bodyMassIndex(person);
+        recordPatient(person, true, result);
+        return result;
     }
 
     @Override
     public float idealBodyWeight(Person person) throws InvalidHealthDataException {
-        float res =  ibwCalc.idealBodyWeight(person);
-        alturas.add(person.height());
-        char gen=(person.gender()==Gender.MALE) ? 'M' : 'W';
-        generos.add(gen);
-        totalPacientes++;
-        
-        return res;
+        float result = ibwCalc.idealBodyWeight(person);
+        recordPatient(person, false, 0f);
+        return result;
     }
 
     @Override
     public float basalMetabolicRate(Person person) throws InvalidHealthDataException {
-        float res = bmrCalc.basalMetabolicRate(person);
-        pesos.add(person.weight());
-        alturas.add(person.height());
-        char gen=(person.gender()==Gender.MALE) ? 'M' : 'W';
-        generos.add(gen);
-        totalPacientes++;
-        
-        return res;
+        float result = bmrCalc.basalMetabolicRate(person);
+        recordPatient(person, false, 0f);
+        return result;
+    }
+
+    private synchronized void recordPatient(Person person, boolean hasBmi, float bmi) {
+        PatientStats stats = patients.get(person);
+        if (stats == null) {
+            stats = new PatientStats(person.weight(), person.height(), person.gender());
+            patients.put(person, stats);
+        }
+        if (hasBmi && !stats.hasBmi) {
+            stats.bmi = bmi;
+            stats.hasBmi = true;
+        }
     }
 
     @Override
-    public float alturaMedia() {
-        if (alturas.isEmpty()) return 0f;
+    public synchronized float alturaMedia() {
+        if (patients.isEmpty()) return 0f;
         float sum = 0;
-        for (Float a : alturas) sum += a;
-        return sum / alturas.size();
+        for (PatientStats stats : patients.values()) sum += stats.height;
+        return sum / patients.size();
     }
 
     @Override
-    public float pesoMedio() {
-        if (pesos.isEmpty()) return 0f;
+    public synchronized float pesoMedio() {
+        if (patients.isEmpty()) return 0f;
         float sum = 0;
-        for (Float p : pesos) sum += p;
-        return sum / pesos.size();
+        for (PatientStats stats : patients.values()) sum += stats.weight;
+        return sum / patients.size();
     }
 
     @Override
-    public float imcMedio() {
-        if (imcs.isEmpty()) return 0f;
+    public synchronized float imcMedio() {
         float sum = 0;
-        for (Float i : imcs) sum += i;
-        return sum / imcs.size();
-    }
-
-    @Override
-    public int numSexoH() {
         int count = 0;
-        for (Character g : generos) {
-            if (g == 'M') count++;
+        for (PatientStats stats : patients.values()) {
+            if (stats.hasBmi) {
+                sum += stats.bmi;
+                count++;
+            }
+        }
+        if (count == 0) return 0f;
+        return sum / count;
+    }
+
+    @Override
+    public synchronized int numSexoH() {
+        int count = 0;
+        for (PatientStats stats : patients.values()) {
+            if (stats.gender == Gender.MALE) count++;
         }
         return count;
     }
 
     @Override
-    public int numSexoM() {
+    public synchronized int numSexoM() {
         int count = 0;
-        for (Character g : generos) {
-            if (g == 'W') count++;
+        for (PatientStats stats : patients.values()) {
+            if (stats.gender == Gender.FEMALE) count++;
         }
         return count;
     }
 
     @Override
-    public int numTotalPacientes() {
-        return totalPacientes;
+    public synchronized int numTotalPacientes() {
+        return patients.size();
+    }
+
+    private static final class PatientStats {
+        private final float weight;
+        private final float height;
+        private final Gender gender;
+        private float bmi;
+        private boolean hasBmi;
+
+        private PatientStats(float weight, float height, Gender gender) {
+            this.weight = weight;
+            this.height = height;
+            this.gender = gender;
+        }
     }
 }
