@@ -44,6 +44,20 @@ class ProxyHealthCalcTest {
     }
 
     @Test
+    void ignoresDataTheMetricDoesNotUse() throws Exception {
+        ProxyHealthCalc proxy = new ProxyHealthCalc(calculator, calculator, calculator);
+        HealthHospital hospital = new AdapterHospital(proxy, proxy);
+
+        hospital.indiceMasaCorporal(1.60f, 50000);
+        hospital.pesoCorporalIdeal('W', 1.70f);
+
+        assertEquals(2, proxy.numTotalPacientes());
+        assertEquals(50f, proxy.pesoMedio(), 0.001f);
+        assertEquals(0, proxy.numSexoH());
+        assertEquals(1, proxy.numSexoM());
+    }
+
+    @Test
     void doesNotRecordFailedCalculations() {
         ProxyHealthCalc proxy = new ProxyHealthCalc(calculator, calculator, calculator);
 

@@ -18,11 +18,8 @@ public class HealthCalcImpl implements BodyMassIndex, IdealBodyWeight, BasalMeta
 
     @Override
     public BMICategory category(Person person) throws InvalidHealthDataException {
-        float bmi = this.bodyMassIndex(person); 
-        
-        if (bmi < 0) {
-            throw new InvalidHealthDataException("El IMC no puede ser negativo.");
-        }
+        float bmi = this.bodyMassIndex(person);
+
         if (bmi > 150) {
             throw new InvalidHealthDataException("El IMC debe estar dentro de un rango posible [0-150].");
         }

@@ -127,6 +127,8 @@
               <excludes>
                 <!-- Excluir una clase específica -->
                 <exclude>healthcalc/Main.class</exclude>
+                <exclude>healthcalc/MainGUI*.class</exclude>
+                <exclude>healthcalc/view/**</exclude>
               </excludes>
             </configuration>
           </execution>

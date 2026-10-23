@@ -76,7 +76,9 @@ public class Main {
             System.out.println("Paciente registrado: Altura=" + alturaPies + " pies, Peso=" + pesoLibras + " libras"); //americano
         
             verAmerican.indiceMasaCorporal(alturaPies, pesoLibras);
-            
+            int ibwLibras = verAmerican.pesoCorporalIdeal('M', alturaPies);
+            System.out.println("IBW: " + ibwLibras + " lb");
+
         } catch (Exception e) {
             System.err.println("Error en los decoradores: " + e.getMessage());
         }
@@ -92,7 +94,8 @@ public class Main {
             System.out.println("Paciente registrado: Altura=" + alturaMetros + " m, Peso=" + pesoGramos + " g");
         
             verEuropean.indiceMasaCorporal(alturaMetros, pesoGramos);
-            
+            verEuropean.pesoCorporalIdeal('M', alturaMetros);
+
         } catch (Exception e) {
             System.err.println("Error en los decoradores: " + e.getMessage());
         }

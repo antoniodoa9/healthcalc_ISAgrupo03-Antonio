@@ -25,7 +25,7 @@ Feature: Cálculo del IMC (Índice de Masa Corporal)
     Then el sistema debe lanzar una excepción indicando que los datos de salud son inválidos para el IMC
 
     @ErrorHandling
-    Examples: Ceros, género invalido y variables negativas
+    Examples: Ceros y variables negativas
       | peso  | altura |
       | 0.0   | 1.75   |
       | 75.0  | 0.0    |

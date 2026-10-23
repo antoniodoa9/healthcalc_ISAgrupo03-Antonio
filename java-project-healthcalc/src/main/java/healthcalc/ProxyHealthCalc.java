@@ -21,36 +21,44 @@ public class ProxyHealthCalc implements BodyMassIndex, IdealBodyWeight, BasalMet
     @Override
     public BMICategory category(Person person) throws InvalidHealthDataException {
         BMICategory category = bmiCalc.category(person);
-        recordPatient(person, false, 0f);
+        recordPatient(person, true, false, 0f);
         return category;
     }
 
     @Override
     public float bodyMassIndex(Person person) throws InvalidHealthDataException {
         float result = bmiCalc.bodyMassIndex(person);
-        recordPatient(person, true, result);
+        recordPatient(person, true, true, result);
         return result;
     }
 
     @Override
     public float idealBodyWeight(Person person) throws InvalidHealthDataException {
         float result = ibwCalc.idealBodyWeight(person);
-        recordPatient(person, false, 0f);
+        // The IBW does not use the weight, so it is not recorded
+        recordPatient(person, false, false, 0f);
         return result;
     }
 
     @Override
     public float basalMetabolicRate(Person person) throws InvalidHealthDataException {
         float result = bmrCalc.basalMetabolicRate(person);
-        recordPatient(person, false, 0f);
+        recordPatient(person, true, false, 0f);
         return result;
     }
 
-    private synchronized void recordPatient(Person person, boolean hasBmi, float bmi) {
+    private synchronized void recordPatient(Person person, boolean usesWeight, boolean hasBmi, float bmi) {
         PatientStats stats = patients.get(person);
         if (stats == null) {
-            stats = new PatientStats(person.weight(), person.height(), person.gender());
+            stats = new PatientStats(person.height());
             patients.put(person, stats);
+        }
+        if (usesWeight && !stats.hasWeight) {
+            stats.weight = person.weight();
+            stats.hasWeight = true;
+        }
+        if (stats.gender == null) {
+            stats.gender = person.gender();
         }
         if (hasBmi && !stats.hasBmi) {
             stats.bmi = bmi;
@@ -68,10 +76,16 @@ public class ProxyHealthCalc implements BodyMassIndex, IdealBodyWeight, BasalMet
 
     @Override
     public synchronized float pesoMedio() {
-        if (patients.isEmpty()) return 0f;
         float sum = 0;
-        for (PatientStats stats : patients.values()) sum += stats.weight;
-        return sum / patients.size();
+        int count = 0;
+        for (PatientStats stats : patients.values()) {
+            if (stats.hasWeight) {
+                sum += stats.weight;
+                count++;
+            }
+        }
+        if (count == 0) return 0f;
+        return sum / count;
     }
 
     @Override
@@ -112,16 +126,15 @@ public class ProxyHealthCalc implements BodyMassIndex, IdealBodyWeight, BasalMet
     }
 
     private static final class PatientStats {
-        private final float weight;
         private final float height;
-        private final Gender gender;
+        private float weight;
+        private boolean hasWeight;
+        private Gender gender;
         private float bmi;
         private boolean hasBmi;
 
-        private PatientStats(float weight, float height, Gender gender) {
-            this.weight = weight;
+        private PatientStats(float height) {
             this.height = height;
-            this.gender = gender;
         }
     }
 }

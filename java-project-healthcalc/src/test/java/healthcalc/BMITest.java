@@ -117,9 +117,9 @@ public class BMITest {
             assertEquals(expected, result);
         }
 
-        @ParameterizedTest(name = "BMI mínimo inválido: {0}")
+        @ParameterizedTest(name = "Peso negativo al clasificar: {0}")
         @ValueSource(floats = {-50.0f, -1.0f, -0.01f})
-        @DisplayName("Bloqueo de valores de BMI negativos (Error de entrada)")
+        @DisplayName("La clasificación rechaza pesos negativos (el BMI nunca llega a ser negativo)")
         void testBmiClassificationMinimoImposible(float bmi) {
             Person patient = new Patient(bmi, 1.0f, Gender.MALE, 30);
             assertThrows(InvalidHealthDataException.class, () -> healthCalc.category(patient));

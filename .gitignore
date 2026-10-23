@@ -246,3 +246,6 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Ejecutable de la GUI enlazado desde el README
+!/HealthCalc_grupo03.jar
