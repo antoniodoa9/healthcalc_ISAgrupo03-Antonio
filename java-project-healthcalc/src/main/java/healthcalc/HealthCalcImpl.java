@@ -126,7 +126,11 @@ public class HealthCalcImpl implements BodyMassIndex, IdealBodyWeight, BasalMeta
         } else { 
             ibw = (float) ((height - 100) - ((height - 150) / 2.0));
         }
-        
+
+        if (ibw <= 0) {
+            throw new InvalidHealthDataException("La altura es demasiado baja para aplicar la fórmula de Lorentz.");
+        }
+
         return ibw;
     }
 }

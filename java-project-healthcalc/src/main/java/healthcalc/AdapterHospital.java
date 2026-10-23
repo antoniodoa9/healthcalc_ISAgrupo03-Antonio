@@ -13,7 +13,7 @@ public class AdapterHospital implements HealthHospital {
     @Override
     public int pesoCorporalIdeal(char genero, float altura) throws Exception {
     	
-        Gender genEnum= (Character.toUpperCase(genero)=='M') ? Gender.MALE : Gender.FEMALE;
+        Gender genEnum = Gender.fromChar(genero);
 
         Person patient= new Patient(70.0f, altura, genEnum, 30); 
 

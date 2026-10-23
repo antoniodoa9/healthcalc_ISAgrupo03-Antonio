@@ -90,5 +90,42 @@ public class IBWTest {
             Person patient = new Patient(70.0f, height, Gender.FEMALE, 30);
             assertThrows(InvalidHealthDataException.class, () -> healthCalc.idealBodyWeight(patient));
         }
+
+        @ParameterizedTest(name = "Hombre: altura {0} m -> IBW no positivo")
+        @ValueSource(floats = {0.30f, 0.50f, 0.83f})
+        @DisplayName("Bloqueo de alturas de hombre que producirían un IBW negativo o nulo")
+        void testIBWHombreNoPositivo(float height) {
+            Person patient = new Patient(70.0f, height, Gender.MALE, 30);
+            assertThrows(InvalidHealthDataException.class, () -> healthCalc.idealBodyWeight(patient));
+        }
+
+        @ParameterizedTest(name = "Mujer: altura {0} m -> IBW no positivo")
+        @ValueSource(floats = {0.30f, 0.40f, 0.50f})
+        @DisplayName("Bloqueo de alturas de mujer que producirían un IBW negativo o nulo")
+        void testIBWMujerNoPositivo(float height) {
+            Person patient = new Patient(70.0f, height, Gender.FEMALE, 30);
+            assertThrows(InvalidHealthDataException.class, () -> healthCalc.idealBodyWeight(patient));
+        }
+    }
+
+    @Nested
+    @DisplayName("Conversión del género desde carácter")
+    class GenderFromCharTests {
+
+        @Test
+        @DisplayName("'M' y 'W' se convierten en MALE y FEMALE")
+        void testGeneroValido() {
+            assertAll(
+                () -> assertEquals(Gender.MALE, Gender.fromChar('M')),
+                () -> assertEquals(Gender.FEMALE, Gender.fromChar('W'))
+            );
+        }
+
+        @ParameterizedTest(name = "Género inválido: ''{0}''")
+        @ValueSource(chars = {'X', 'm', 'w', 'F', ' '})
+        @DisplayName("Lanzar excepción con cualquier carácter distinto de 'M' o 'W'")
+        void testGeneroInvalido(char gender) {
+            assertThrows(InvalidHealthDataException.class, () -> Gender.fromChar(gender));
+        }
     }
 }

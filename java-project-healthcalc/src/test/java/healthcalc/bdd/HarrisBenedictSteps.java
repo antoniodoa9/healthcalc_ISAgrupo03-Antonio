@@ -18,10 +18,12 @@ import healthcalc.exceptions.InvalidHealthDataException;
 public class HarrisBenedictSteps {
 
     private BasalMetabolicRate healthCalc;
-    private Person paciente;
+    private double peso;
+    private double altura;
+    private int edad;
+    private char generoIngresado;
     private double resultado;
     private boolean exceptionThrown;
-    private String generoIngresado;
 
     @Given("la calculadora de salud está iniciada")
     public void la_calculadora_de_salud_esta_iniciada() {
@@ -30,17 +32,16 @@ public class HarrisBenedictSteps {
 
     @Given("los datos del paciente son peso {double} kg, altura {double} cm, edad {int} años y género {string}")
     public void los_datos_del_paciente_son(Double peso, Double altura, Integer edad, String genero) {
-        this.generoIngresado = genero;
-        Gender genderEnum = genero.equals("M") ? Gender.MALE : Gender.FEMALE;
-        this.paciente = new Patient(peso.floatValue(), (float)(altura / 100.0), genderEnum, edad);
+        this.peso = peso;
+        this.altura = altura;
+        this.edad = edad;
+        this.generoIngresado = genero.charAt(0);
     }
 
     @When("ejecuto el cálculo de la TMB")
     public void ejecuto_el_calculo_de_la_tmb() {
         try {
-            if (!generoIngresado.equals("M") && !generoIngresado.equals("W")) {
-                throw new InvalidHealthDataException("Género inválido");
-            }
+            Person paciente = new Patient((float) peso, (float) (altura / 100.0), Gender.fromChar(generoIngresado), edad);
             resultado = healthCalc.basalMetabolicRate(paciente);
             exceptionThrown = false;
         } catch (InvalidHealthDataException e) {
