@@ -25,10 +25,10 @@ public class CtrIBW implements ActionListener {
         String command = e.getActionCommand();
         if (command.equalsIgnoreCase("CalcularIBW")) {
             try {
-                float height = (float) view.getHeightValue();
+                float height = (float) (view.getHeightValue() / 100.0);
                 char genderChar = view.getGender();
 
-                Gender gender = (Character.toUpperCase(genderChar) == 'M') ? Gender.MALE : Gender.FEMALE;
+                Gender gender = Gender.fromChar(genderChar);
                 Person patient = new Patient(70.0f, height, gender, 30);
                 
                 float result = model.idealBodyWeight(patient);

@@ -18,10 +18,10 @@ import io.cucumber.java.en.When;
 public class IBWSteps {
 
     private IdealBodyWeight healthCalc;
-    private Person paciente;
+    private double altura;
+    private char generoIngresado;
     private double resultado;
     private boolean exceptionThrown;
-    private String generoIngresado;
 
     @Given("la calculadora de salud está iniciada para el PCI")
     public void la_calculadora_de_salud_esta_iniciada_para_el_pci() {
@@ -30,17 +30,14 @@ public class IBWSteps {
 
     @Given("los datos del paciente son altura {double} cm y género {string}")
     public void los_datos_del_paciente_son(Double altura, String genero) {
-        this.generoIngresado = genero;
-        Gender genderEnum = genero.equals("M") ? Gender.MALE : Gender.FEMALE;
-        this.paciente = new Patient(70.0f, (float)(altura / 100.0), genderEnum, 30);
+        this.altura = altura;
+        this.generoIngresado = genero.charAt(0);
     }
 
     @When("ejecuto el cálculo del PCI")
     public void ejecuto_el_calculo_del_pci() {
         try {
-            if (!generoIngresado.equals("M") && !generoIngresado.equals("W")) {
-                throw new InvalidHealthDataException("Género inválido");
-            }
+            Person paciente = new Patient(70.0f, (float) (altura / 100.0), Gender.fromChar(generoIngresado), 30);
             resultado = healthCalc.idealBodyWeight(paciente);
             exceptionThrown = false;
         } catch (InvalidHealthDataException e) {

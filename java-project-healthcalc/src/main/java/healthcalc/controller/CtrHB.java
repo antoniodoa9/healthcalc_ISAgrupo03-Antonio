@@ -26,11 +26,11 @@ public class CtrHB implements ActionListener {
         if (command.equalsIgnoreCase("CalcularHB")){
             try {
                 float weight = (float) view.getWeight();
-                float height = (float) view.getHeightValue();
+                float height = (float) (view.getHeightValue() / 100.0);
                 int age = view.getAge();
                 char genderChar = view.getGender();
 
-                Gender gender = (Character.toUpperCase(genderChar) == 'M') ? Gender.MALE : Gender.FEMALE;
+                Gender gender = Gender.fromChar(genderChar);
                 Person patient = new Patient(weight, height, gender, age);
 
                 float result = model.basalMetabolicRate(patient);
