@@ -29,7 +29,7 @@ Scenario Outline: Intento de clasificación con valores inválidos de IMC
   Then el sistema debe lanzar una excepción indicando que los datos de salud son inválidos para el IMC
 
   @ErrorHandling
-  Examples: Valores negativos o excesivamente altos
+  Examples: Pesos negativos o IMC excesivamente altos
     | imc_calculado |
     | -5.0          |
     | -0.1          |

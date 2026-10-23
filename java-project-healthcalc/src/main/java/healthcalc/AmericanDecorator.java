@@ -16,6 +16,7 @@ public class AmericanDecorator extends BaseDecoratorVersion {
     @Override
     public int pesoCorporalIdeal(char genero, float alturaPies) throws Exception {
         float metros = (alturaPies * 12) / 39.37f;
-        return super.pesoCorporalIdeal(genero, metros);
+        int gramos = super.pesoCorporalIdeal(genero, metros);
+        return Math.round((gramos / 1000f) * 2.20462f);
     }
 }
