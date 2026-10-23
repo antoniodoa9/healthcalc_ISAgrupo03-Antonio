@@ -1,5 +1,7 @@
 package healthcalc;
 
+import healthcalc.exceptions.InvalidHealthDataException;
+
 public class AdapterHospital implements HealthHospital {
 	
     private BodyMassIndex bmiCalc;
@@ -11,11 +13,12 @@ public class AdapterHospital implements HealthHospital {
     }
 
     @Override
-    public int pesoCorporalIdeal(char genero, float altura) throws Exception {
+    public int pesoCorporalIdeal(char genero, float altura) throws InvalidHealthDataException {
     	
         Gender genEnum = Gender.fromChar(genero);
 
-        Person patient= new Patient(70.0f, altura, genEnum, 30); 
+        // The IBW only uses height and gender; weight and age are placeholders
+        Person patient = new Patient(70.0f, altura, genEnum, 30);
 
         float ibwKilos = ibwCalc.idealBodyWeight(patient);
 
@@ -23,27 +26,16 @@ public class AdapterHospital implements HealthHospital {
     }
 
     @Override
-    public Tuple<Float, String> indiceMasaCorporal(float altura, int peso) throws Exception {
+    public Tuple<Float, String> indiceMasaCorporal(float altura, int peso) throws InvalidHealthDataException {
     	
         float pesoKilos = (float) (peso / 1000.0);
 
-        Person patient = new Patient(pesoKilos, altura, Gender.MALE, 30);
-        
+        // The hospital API does not provide the gender for the BMI, so it is left unknown
+        Person patient = new Patient(pesoKilos, altura, null, 30);
+
         float valorBmi = bmiCalc.bodyMassIndex(patient);
         BMICategory catEnum = bmiCalc.category(patient);
-        String clasificacion = "";
-        switch (catEnum) {
-            case SEVERE_THINNESS: clasificacion = "Delgadez severa"; break;
-            case MODERATE_THINNESS: clasificacion = "Delgadez moderada"; break;
-            case MILD_THINNESS: clasificacion = "Delgadez leve"; break;
-            case NORMAL: clasificacion = "Normal"; break;
-            case OVERWEIGHT: clasificacion = "Sobrepeso"; break;
-            case OBESE_CLASS_I: clasificacion = "Obesidad Clase I"; break;
-            case OBESE_CLASS_II: clasificacion = "Obesidad Clase II"; break;
-            case OBESE_CLASS_III: clasificacion = "Obesidad Clase III"; break;
-            default: clasificacion = catEnum.toString();
-        }
-        
-        return new Tuple<>((float) valorBmi, clasificacion);
+
+        return new Tuple<>((float) valorBmi, catEnum.spanishLabel());
     }
 }

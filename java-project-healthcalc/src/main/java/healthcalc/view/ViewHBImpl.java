@@ -4,7 +4,6 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
-import javax.swing.BoxLayout;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
@@ -18,7 +17,6 @@ import java.awt.FlowLayout;
 import java.awt.Color;
 
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.border.LineBorder;
 import javax.swing.border.CompoundBorder;
 

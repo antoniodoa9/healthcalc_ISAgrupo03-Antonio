@@ -4,7 +4,6 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JTabbedPane;
-import javax.swing.text.View;
 
 import healthcalc.controller.CtrBMI;
 import healthcalc.controller.CtrHB;

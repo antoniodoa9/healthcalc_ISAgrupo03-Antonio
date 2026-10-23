@@ -282,33 +282,6 @@ Para cada categoría, probamos valores que están justo en el límite para asegu
 ## Instalación y ejecución
 
 <details>
-<summary><b>Python</b></summary>
-
-### Dependencias
-- Python 3.13+
-- pytest
-- coverage
-- pytest-cov
-
-### Preparación del entorno
-1. Clonar este repositorio: `git clone https://github.com/IngSoftAvanz/healthcalc.git`
-2. Desplazarse a la carpeta del proyecto:
-   `cd healthcalc/python-project-healthcalc`
-3. Crear entorno virtual: `python -m venv env` (esto crea una carpeta `env` para el entorno virtual)
-4. Activar el entorno virtual:
-    - En Windows: `.\env\Scripts\Activate`
-    - En Linux: `. env/bin/activate`
-5. Instalar dependencias: `pip install -r requirements.txt`
-
-### Ejecución
-- Ejecutar la aplicación: `python main.py <número>`
-- Ejecutar los tests: `pytest -v`
-- Ejecutar los tests con informe de cobertura: `pytest -v --cov=factorial --cov-report=html tests/`
-
-</details>
-
-
-<details>
 <summary><b>Java</b></summary>
 
 ### Dependencias
@@ -318,9 +291,9 @@ Para cada categoría, probamos valores que están justo en el límite para asegu
 - Jacoco
   
 ### Preparación del entorno
-1. Clonar este repositorio: `git clone https://github.com/IngSoftAvanz/healthcalc.git`
+1. Clonar este repositorio: `git clone https://github.com/antoniodoa9/healthcalc_ISAgrupo03-Antonio.git`
 2. Desplazarse a la carpeta del proyecto:
-   `cd healthcalc/java-project-healthcalc`
+   `cd healthcalc_ISAgrupo03-Antonio/java-project-healthcalc`
 3. Compilar con Maven: `mvn clean compile`
 
 
@@ -444,7 +417,7 @@ Para probar la calculadora sin necesidad de abrir el entorno de desarrollo:
 
 ### 3. Patrón Proxy 
 * **Problema:** Llevar un registro e historial de uso clínico de forma anónima capturando los datos introducidos por los pacientes y calculando medias globales a través de la interfaz `HealthStats`, sin alterar el código de la calculadora original ni del adaptador del hospital.
-* **Solución:** `ProxyHealthCalc` intercepta los cálculos y delega en la instancia original. Sus estadísticas identifican pacientes por identidad del objeto `Person`, registran sus datos demográficos una sola vez tras un cálculo exitoso y agregan el IMC una sola vez por paciente.
+* **Solución:** `ProxyHealthCalc` intercepta los cálculos y delega en la instancia original. Sus estadísticas identifican pacientes por identidad del objeto `Person`, registran sus datos demográficos una sola vez tras un cálculo exitoso y agregan el IMC una sola vez por paciente. Solo se registran los datos que usa cada métrica (por ejemplo, el IBW no registra el peso), para que los valores de relleno del adaptador del hospital no distorsionen las medias.
 * **Diagrama UML:**
   ![Diagrama UML - Proxy](design_patterns/03_Proxy_UML.png)
 
