@@ -1,4 +1,32 @@
 # HealthCalc
+
+**Calculadora de métricas de salud desarrollada paso a paso con buenas prácticas de ingeniería del software**
+
+*Health metrics calculator (BMI, ideal body weight with Lorentz and basal metabolic rate with Harris-Benedict) built in Java with Maven, JUnit, BDD, a Swing GUI with MVC, design patterns and refactoring. Course project, Advanced Software Engineering, University of Málaga (2025-26).*
+
+![Interfaz gráfica de HealthCalc](doc/gui/captura_BMI_gui.png)
+
+## Resumen
+
+| | |
+|---|---|
+| **Qué calcula** | Índice de masa corporal (IMC) y su clasificación, peso corporal ideal (fórmula de Lorentz) y tasa metabólica basal (ecuación de Harris-Benedict) |
+| **Tecnologías** | Java, Maven, JUnit, Jacoco (cobertura), Cucumber (BDD), Swing (patrón MVC), GitHub Projects |
+| **Buenas prácticas** | Validación de entradas con límites biológicos reales, pruebas unitarias, especificación de casos de uso, BDD, patrones de diseño (Singleton, Adapter, Proxy y Decorator) y cinco *refactorings* documentados |
+| **Equipo** | Antonio Sánchez Doña, Aissa Omar El Hammouti Chachoui y Paloma (palomamtnz13), sobre la plantilla del profesor José Miguel Horcas |
+
+El proyecto se construyó a lo largo de la asignatura, práctica a práctica. Cada sección de este README corresponde a una de esas prácticas, en el mismo orden.
+
+## Contenido
+
+- [Requisitos](#requisitos) y [métricas](#métricas-de-healthcalc)
+- [Plan de pruebas](#plan-de-pruebas) e [instalación](#instalación-y-ejecución)
+- [Casos de uso](#especificación) y [BDD](#behaviour-driven-development-bdd)
+- [Interfaz gráfica](#interfaz-gráfica-de-usuario-gui)
+- [Patrones de diseño](#práctica-6-patrones-de-diseño) y [refactorings](#práctica-7-refactorings)
+- [Gestión del proyecto con Kanban](#práctica-8-nuevo-proyecto-healthcalc)
+
+## Contexto
 Bienvenido al proyecto de la asignatura de **Ingeniería del Software Avanzada**.
 
 El [Hospital Universitario Virgen de la Victoria (El Clínico)](https://www.sspa.juntadeandalucia.es/servicioandaluzdesalud/hospital/virgen-victoria/) de Málaga nos ha encargado el desarrollo de una **Calculadora de Salud** (**_HealthCalc_**) que permita calcular diferentes métricas de los pacientes.
